@@ -41,7 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Party\PartyCreate.cs" />
+    <Compile Include="Party\PartyDetail.cs" />
+    <Compile Include="Party\PartyEdit.cs" />
+    <Compile Include="Party\PartyListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Location\" />
+    <Folder Include="Neighborhood\" />
+    <Folder Include="PartyItem\" />
+    <Folder Include="Resident\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
