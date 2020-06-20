@@ -16,7 +16,7 @@ namespace PartyNeighbors.Data
         [Required]
         public string LastName { get; set; }
         [Required]
-        public string FullName { get; }
+        public string FullName { get; set; }
         [Required]
         public int NeighborhoodId { get; set; }
         public int PartyItemId { get; set; }

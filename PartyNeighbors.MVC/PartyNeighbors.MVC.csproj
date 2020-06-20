@@ -256,6 +256,10 @@
       <Project>{26201043-200B-4DC9-AC54-D827683DC1CE}</Project>
       <Name>PartyNeighbors.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PartyNeighbors.Services\PartyNeighbors.Services.csproj">
+      <Project>{3b502b06-bfa9-4c8a-bbce-9b40a80fb853}</Project>
+      <Name>PartyNeighbors.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

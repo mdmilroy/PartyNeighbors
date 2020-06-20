@@ -8,9 +8,10 @@ namespace PartyNeighbors.Models.PartyItem
 {
     public class PartyItemEdit
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public int Quantity { get; set; } = 0;
-        public decimal Price { get; set; }
+        public double Price { get; set; }
         public bool Purchased { get; set; } = false;
     }
 }

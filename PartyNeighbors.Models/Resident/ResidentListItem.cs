@@ -9,7 +9,7 @@ namespace PartyNeighbors.Models.Resident
     public class ResidentListItem
     {
         public int Id { get; set; }
-        public string FullName { get; }
+        public string FullName { get; set; }
         public int NeighborhoodId { get; set; }
     }
 }

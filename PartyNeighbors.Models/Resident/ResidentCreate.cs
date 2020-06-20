@@ -10,7 +10,6 @@ namespace PartyNeighbors.Models.Resident
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string FullName { get; }
         public int NeighborhoodId { get; set; }
     }
 }

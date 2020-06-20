@@ -16,8 +16,10 @@ namespace PartyNeighbors.Data
         [Required]
         public int Quantity { get; set; } = 0;
         [Required]
-        public decimal Price { get; set; }
+        public double Price { get; set; } = 0.0;
         [Required]
         public bool Purchased { get; set; } = false;
+
+        public int PartyId { get; set; }
     }
 }
