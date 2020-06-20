@@ -29,5 +29,12 @@ namespace PartyNeighbors.Data
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet<Party> Parties { get; set; }
+        public DbSet<Neighborhood> Neighborhoods { get; set; }
+        public DbSet<Resident> Residents { get; set; }
+        public DbSet<Location> Locations { get; set; }
+        public DbSet<PartyItem> PartyItems { get; set; }
+
     }
 }

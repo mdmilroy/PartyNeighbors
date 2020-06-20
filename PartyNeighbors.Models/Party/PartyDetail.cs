@@ -14,8 +14,9 @@ namespace PartyNeighbors.Models.Party
         public DateTimeOffset PartyTime { get; set; }
         public int HostId { get; set; }
         public int Capacity { get; set; }
+        public string Category { get; set; }
         public List<string> Guests { get; set; }
         public int PartyItemId { get; set; }
-        public Dictionary<int, string> PartyItems { get; set; }
+        public List<string> PartyItems { get; set; }
     }
 }

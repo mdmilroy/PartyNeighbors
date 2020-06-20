@@ -41,17 +41,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Location\LocationCreate.cs" />
+    <Compile Include="Location\LocationDetail.cs" />
+    <Compile Include="Location\LocationEdit.cs" />
+    <Compile Include="Location\LocationListItem.cs" />
+    <Compile Include="Neighborhood\NeighborhoodCreate.cs" />
+    <Compile Include="Neighborhood\NeighborhoodDetail.cs" />
+    <Compile Include="Neighborhood\NeighborhoodEdit.cs" />
+    <Compile Include="Neighborhood\NeighborhoodListItem.cs" />
+    <Compile Include="PartyItem\PartyItemCreate.cs" />
+    <Compile Include="PartyItem\PartyItemDetail.cs" />
+    <Compile Include="PartyItem\PartyItemEdit.cs" />
+    <Compile Include="PartyItem\PartyItemListItem.cs" />
     <Compile Include="Party\PartyCreate.cs" />
     <Compile Include="Party\PartyDetail.cs" />
     <Compile Include="Party\PartyEdit.cs" />
     <Compile Include="Party\PartyListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resident\ResidentCreate.cs" />
+    <Compile Include="Resident\ResidentDetail.cs" />
+    <Compile Include="Resident\ResidentEdit.cs" />
+    <Compile Include="Resident\ResidentListItem.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Location\" />
-    <Folder Include="Neighborhood\" />
-    <Folder Include="PartyItem\" />
-    <Folder Include="Resident\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

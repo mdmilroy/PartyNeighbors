@@ -1,25 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PartyNeighbors.Data
+namespace PartyNeighbors.Models.PartyItem
 {
-    public class PartyItem
+    public class PartyItemListItem
     {
-        [Key]
         public int Id { get; set; }
-        [Required]
         public string Name { get; set; }
-        [Required]
+        public double Price { get; set; }
         public int Quantity { get; set; } = 0;
-        [Required]
-        public double Price { get; set; } = 0.0;
-        [Required]
         public bool Purchased { get; set; } = false;
-
-        public int PartyId { get; set; }
     }
 }

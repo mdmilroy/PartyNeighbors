@@ -23,8 +23,9 @@ namespace PartyNeighbors.Data
         public int HostId { get; set; }
         [Required]
         public int Capacity { get; set; }
+        public string Category { get; set; }
         public List<string> Guests { get; set; } // populate with Resident's Full Name
         public int PartyItemId { get; set; }
-        public List<PartyItem> PartyItems { get; set; }
+        public List<string> PartyItems { get; set; }
     }
 }
