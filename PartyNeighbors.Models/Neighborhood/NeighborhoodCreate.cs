@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PartyNeighbors.Models.Neighborhood
 {
-    public class NeighborhoodItem
+    public class NeighborhoodCreate
     {
         public string Name { get; set; }
         public string City { get; set; }

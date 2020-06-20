@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PartyNeighbors.Models.Location
 {
-    public class LocationItem
+    public class LocationEdit
     {
         public string Name { get; set; }
     }

@@ -41,9 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Location\LocationItem.cs" />
+    <Compile Include="Location\LocationCreate.cs" />
+    <Compile Include="Location\LocationDetail.cs" />
+    <Compile Include="Location\LocationEdit.cs" />
     <Compile Include="Location\LocationListItem.cs" />
-    <Compile Include="Neighborhood\NeighborhoodItem.cs" />
+    <Compile Include="Neighborhood\NeighborhoodCreate.cs" />
+    <Compile Include="Neighborhood\NeighborhoodDetail.cs" />
+    <Compile Include="Neighborhood\NeighborhoodEdit.cs" />
     <Compile Include="Neighborhood\NeighborhoodListItem.cs" />
     <Compile Include="PartyItem\PartyItemCreate.cs" />
     <Compile Include="PartyItem\PartyItemDetail.cs" />
