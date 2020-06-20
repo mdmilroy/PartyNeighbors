@@ -49,12 +49,21 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -177,6 +186,11 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="WebAPI\LocationAPI.cs" />
+    <Compile Include="WebAPI\NeighborhoodAPI.cs" />
+    <Compile Include="WebAPI\PartyAPI.cs" />
+    <Compile Include="WebAPI\PartyItemAPI.cs" />
+    <Compile Include="WebAPI\ResidentAPI.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -237,6 +251,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Party\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -255,6 +270,10 @@
     <ProjectReference Include="..\PartyNeighbors.Data\PartyNeighbors.Data.csproj">
       <Project>{26201043-200B-4DC9-AC54-D827683DC1CE}</Project>
       <Name>PartyNeighbors.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PartyNeighbors.Models\PartyNeighbors.Models.csproj">
+      <Project>{63F5E034-3EF4-4641-B779-20492E16D74A}</Project>
+      <Name>PartyNeighbors.Models</Name>
     </ProjectReference>
     <ProjectReference Include="..\PartyNeighbors.Services\PartyNeighbors.Services.csproj">
       <Project>{3b502b06-bfa9-4c8a-bbce-9b40a80fb853}</Project>

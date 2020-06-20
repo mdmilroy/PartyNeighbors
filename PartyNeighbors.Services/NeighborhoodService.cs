@@ -33,7 +33,7 @@ namespace PartyNeighbors.Services
             _db.Neighborhoods.Add(entity);
             return _db.SaveChanges() == 1;
         }
-        
+
         public IEnumerable<NeighborhoodListItem> GetNeighborhoods()
         {
             var query = _db.Neighborhoods.Select(n => new NeighborhoodListItem
