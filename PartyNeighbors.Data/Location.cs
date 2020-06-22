@@ -10,7 +10,7 @@ namespace PartyNeighbors.Data
     public class Location
     {
         [Key]
-        public int Id { get; set; }
+        public int LocationId { get; set; }
         [Required]
         public string Name { get; set; } // e.g. community center, pool, park, etc.
     }

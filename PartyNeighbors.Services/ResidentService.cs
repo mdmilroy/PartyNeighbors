@@ -38,7 +38,7 @@ namespace PartyNeighbors.Services
         {
             var query = _db.Residents.Select(r => new ResidentListItem
             {
-                Id = r.Id,
+                Id = r.ResidentId,
                 FullName = r.FullName,
                 NeighborhoodId = r.NeighborhoodId
             });
@@ -48,7 +48,7 @@ namespace PartyNeighbors.Services
 
         public ResidentDetail GetResidentById(int id)
         {
-            var entity = _db.Residents.Single(r => r.Id == id);
+            var entity = _db.Residents.Single(r => r.ResidentId == id);
 
             return new ResidentDetail
             {
@@ -60,7 +60,7 @@ namespace PartyNeighbors.Services
 
         public bool EditResident(ResidentEdit residentToEdit)
         {
-            var entity = _db.Residents.Single(r => r.Id == residentToEdit.Id);
+            var entity = _db.Residents.Single(r => r.ResidentId == residentToEdit.Id);
 
             entity.FirstName = residentToEdit.FirstName;
             entity.LastName = residentToEdit.LastName;
@@ -72,7 +72,7 @@ namespace PartyNeighbors.Services
 
         public bool DeleteResident(int id)
         {
-            var entity = _db.Residents.Single(r => r.Id == id);
+            var entity = _db.Residents.Single(r => r.ResidentId == id);
             _db.Residents.Remove(entity);
             return _db.SaveChanges() == 1;
         }

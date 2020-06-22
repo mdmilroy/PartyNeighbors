@@ -54,8 +54,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Category.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Location.cs" />
+    <Compile Include="Migrations\202006222246290_InitialCreate.cs" />
+    <Compile Include="Migrations\202006222246290_InitialCreate.Designer.cs">
+      <DependentUpon>202006222246290_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006222248478_initialMigration.cs" />
+    <Compile Include="Migrations\202006222248478_initialMigration.Designer.cs">
+      <DependentUpon>202006222248478_initialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Neighborhood.cs" />
     <Compile Include="Party.cs" />
     <Compile Include="PartyItem.cs" />
@@ -65,6 +75,14 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202006222246290_InitialCreate.resx">
+      <DependentUpon>202006222246290_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006222248478_initialMigration.resx">
+      <DependentUpon>202006222248478_initialMigration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

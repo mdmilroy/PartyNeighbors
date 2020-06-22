@@ -10,7 +10,7 @@ namespace PartyNeighbors.Data
     public class Neighborhood
     {
         [Key]
-        public int Id { get; set; }
+        public int NeighborhoodId { get; set; }
         [Required]
         public string Name { get; set; }
         [Required]

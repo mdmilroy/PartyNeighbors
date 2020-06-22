@@ -33,7 +33,7 @@ namespace PartyNeighbors.Services
         {
             var query = _db.Locations.Select(l => new LocationListItem
             {
-                Id = l.Id,
+                Id = l.LocationId,
                 Name = l.Name
             });
 
@@ -42,7 +42,7 @@ namespace PartyNeighbors.Services
 
         public LocationDetail GetLocationById(int id)
         {
-            var entity = _db.Locations.Single(l => l.Id == id);
+            var entity = _db.Locations.Single(l => l.LocationId == id);
 
             return new LocationDetail
             {
@@ -52,7 +52,7 @@ namespace PartyNeighbors.Services
 
         public bool EditLocation(LocationEdit locationToEdit)
         {
-            var entity = _db.Locations.Single(l => l.Id == locationToEdit.id);
+            var entity = _db.Locations.Single(l => l.LocationId == locationToEdit.id);
 
             entity.Name = locationToEdit.Name;
 
@@ -61,7 +61,7 @@ namespace PartyNeighbors.Services
 
         public bool DeleteLocation(int id)
         {
-            var entity = _db.Locations.Single(l => l.Id == id);
+            var entity = _db.Locations.Single(l => l.LocationId == id);
 
             _db.Locations.Remove(entity);
             return _db.SaveChanges() == 1;
