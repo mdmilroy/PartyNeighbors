@@ -105,19 +105,25 @@
     @Scripts.Render("~/bundles/jqueryval")
 
     <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    <script src="~/Scripts/jquery-ui-timepicker-addon.min.js"></script>
 
-    <script>
-        $(function () {
-            $(".datepicker").datepicker({
-                dateFormat: "mm-dd-yy",
-                changeMonth: true,
-                minDate: new Date($.now()),
-                showOn: "both",
-                buttonText: "<i class='fa fa-calendar'></i>"
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(function () {
+                $(".datepicker").datetimepicker({
+                    changeMonth: true,
+                    changeYear: true,
+                    minDate: new Date($.now()),
+                    dateFormat: 'dd-M-yy',
+                    controlType: 'select',
+                    timeFormat: 'hh:mm TT'
+                });
             });
         });
+
     </script>
 }
 
 <link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="~/Content/jquery-ui-timepicker-addon.min.css" rel="stylesheet" />

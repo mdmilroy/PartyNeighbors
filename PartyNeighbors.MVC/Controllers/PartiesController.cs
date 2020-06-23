@@ -65,9 +65,9 @@ namespace PartyNeighbors.MVC.Controllers
         // GET: Parties/Edit/5
         public ActionResult Edit(int? id)
         {
-            ViewBag.NeighborhoodId = new SelectList(db.Neighborhoods, "NeighborhoodId", "Neighborhood Name");
-            ViewBag.LocationId = new SelectList(db.Locations, "LocationId", "Location Name");
-            ViewBag.Category = new SelectList(db.Categories, "CategoryId", "Category Name");
+            ViewBag.NeighborhoodId = new SelectList(db.Neighborhoods, "NeighborhoodId", "Name");
+            ViewBag.LocationId = new SelectList(db.Locations, "LocationId", "Name");
+            ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "Name");
 
 
             if (id == null)
