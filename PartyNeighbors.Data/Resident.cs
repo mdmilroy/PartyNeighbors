@@ -10,7 +10,7 @@ namespace PartyNeighbors.Data
     public class Resident
     {
         [Key]
-        public int Id { get; set; }
+        public int ResidentId { get; set; }
         [Required]
         public string FirstName { get; set; }
         [Required]

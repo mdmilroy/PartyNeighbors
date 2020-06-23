@@ -35,6 +35,7 @@ namespace PartyNeighbors.Data
         public DbSet<Resident> Residents { get; set; }
         public DbSet<Location> Locations { get; set; }
         public DbSet<PartyItem> PartyItems { get; set; }
+        public DbSet<Category> Categories { get; set; }
 
     }
 }

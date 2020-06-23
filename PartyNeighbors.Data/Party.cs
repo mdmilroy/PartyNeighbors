@@ -10,7 +10,7 @@ namespace PartyNeighbors.Data
     public class Party
     {
         [Key]
-        public int Id { get; set; }
+        public int PartyId { get; set; }
         [Required]
         public string Name { get; set; }
         [Required]
@@ -23,9 +23,10 @@ namespace PartyNeighbors.Data
         public int HostId { get; set; }
         [Required]
         public int Capacity { get; set; }
-        public string Category { get; set; }
+        public int CategoryId { get; set; }
         public List<string> Guests { get; set; } // populate with Resident's Full Name
         public int PartyItemId { get; set; }
         public List<string> PartyItems { get; set; }
     }
+
 }

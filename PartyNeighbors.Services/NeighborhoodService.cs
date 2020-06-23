@@ -33,12 +33,12 @@ namespace PartyNeighbors.Services
             _db.Neighborhoods.Add(entity);
             return _db.SaveChanges() == 1;
         }
-        
+
         public IEnumerable<NeighborhoodListItem> GetNeighborhoods()
         {
             var query = _db.Neighborhoods.Select(n => new NeighborhoodListItem
             {
-                Id = n.Id,
+                Id = n.NeighborhoodId,
                 City = n.City,
                 Name = n.Name
             });
@@ -48,7 +48,7 @@ namespace PartyNeighbors.Services
         
         public NeighborhoodDetail GetNeighborhoodById(int id)
         {
-            var entity = _db.Neighborhoods.Single(n => n.Id == id);
+            var entity = _db.Neighborhoods.Single(n => n.NeighborhoodId == id);
 
             return new NeighborhoodDetail
             {
@@ -61,7 +61,7 @@ namespace PartyNeighbors.Services
 
         public bool EditNeighborhood(NeighborhoodEdit neighborhoodToEdit)
         {
-            var entity = _db.Neighborhoods.Single(n => n.Id == neighborhoodToEdit.Id);
+            var entity = _db.Neighborhoods.Single(n => n.NeighborhoodId == neighborhoodToEdit.Id);
 
             entity.Name = neighborhoodToEdit.Name;
             entity.City = neighborhoodToEdit.City;
@@ -73,7 +73,7 @@ namespace PartyNeighbors.Services
 
         public bool DeleteNeighborhood(int id)
         {
-            var entity = _db.Neighborhoods.Single(n => n.Id == id);
+            var entity = _db.Neighborhoods.Single(n => n.NeighborhoodId == id);
 
             _db.Neighborhoods.Remove(entity);
             return _db.SaveChanges() == 1;
