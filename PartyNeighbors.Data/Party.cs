@@ -7,25 +7,38 @@ using System.Threading.Tasks;
 
 namespace PartyNeighbors.Data
 {
-    public class Party
+    public class Party // "state"
     {
         [Key]
-        public int Id { get; set; }
+        public int PartyId { get; set; }
         [Required]
         public string Name { get; set; }
         [Required]
-        public int NeighborhoodId { get; set; }
-        [Required]
-        public int LocationId { get; set; }
-        [Required]
         public DateTimeOffset PartyTime { get; set; }
         [Required]
-        public int HostId { get; set; }
+        public string HostId { get; set; }
         [Required]
         public int Capacity { get; set; }
-        public string Category { get; set; }
-        public List<string> Guests { get; set; } // populate with Resident's Full Name
-        public int PartyItemId { get; set; }
-        public List<string> PartyItems { get; set; }
+
+        [Required]
+        public int CategoryId { get; set; }
+        public virtual Category Category { get; set; }
+
+        [Required]
+        public int NeighborhoodId { get; set; }
+        public virtual Neighborhood Neighborhood { get; set; }
+
+        [Required]
+        public int LocationId { get; set; }
+        public virtual Location Location { get; set; }
+
+
+        public Party()
+        {
+            PartyItems = new HashSet<PartyItem>();
+            Residents = new HashSet<Resident>();
+        }
+        public virtual ICollection<PartyItem> PartyItems { get; set; }
+        public virtual ICollection<Resident> Residents { get; set; }
     }
 }

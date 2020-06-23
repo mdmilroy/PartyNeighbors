@@ -41,24 +41,17 @@ namespace PartyNeighbors.Services
             return query.ToArray();
         }
 
-        public PartyItemDetail GetPartyItemByPartyId(int id)
+        public Array GetPartyItemByPartyId(int id)
         {
-            var entity = _db.PartyItems.Single(pi => pi.PartyId == id);
+            var entity = _db.Parties.Include(nameof(PartyItem)).Where(pi => pi.PartyId == id).Select(pi => pi.PartyItems);
 
-            return new PartyItemDetail
-            {
-                Name = entity.Name,
-                PartyId = entity.PartyId,
-                Price = entity.Price,
-                Quantity = entity.Quantity,
-                Purchased = entity.Purchased
-            };
+            return entity.ToArray();
 
         }
 
         public bool EditPartyItem(PartyItemEdit partyItemToEdit)
         {
-            var entity = _db.PartyItems.Single(p => p.Id == partyItemToEdit.Id);
+            var entity = _db.PartyItems.Single(p => p.PartyItemId == partyItemToEdit.Id);
 
             entity.Name = partyItemToEdit.Name;
             entity.Price = partyItemToEdit.Price;
@@ -68,7 +61,7 @@ namespace PartyNeighbors.Services
 
         public bool DeletePartyItem(int id)
         {
-            var entity = _db.PartyItems.Single(p => p.Id == id);
+            var entity = _db.PartyItems.Single(p => p.PartyItemId == id);
 
             _db.PartyItems.Remove(entity);
             return _db.SaveChanges() == 1;

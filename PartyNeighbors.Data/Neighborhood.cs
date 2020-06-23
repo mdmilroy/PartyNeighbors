@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace PartyNeighbors.Data
 {
-    public class Neighborhood
+    public class Neighborhood // "state"
     {
         [Key]
-        public int Id { get; set; }
+        public int NeighborhoodId { get; set; }
         [Required]
         public string Name { get; set; }
         [Required]
@@ -19,5 +19,13 @@ namespace PartyNeighbors.Data
         public string State { get; set; }
         [Required]
         public int ZipCode { get; set; }
+
+        public ICollection<Resident> Residents { get; set; }
+        public ICollection<Party> Parties { get; set; }
+        public Neighborhood()
+        {
+            Locations = new HashSet<Location>();
+        }
+        public virtual ICollection<Location> Locations { get; set; }
     }
 }

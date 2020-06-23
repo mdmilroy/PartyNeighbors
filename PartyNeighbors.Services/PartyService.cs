@@ -28,9 +28,9 @@ namespace PartyNeighbors.Services
                 NeighborhoodId = partyToCreate.NeighborhoodId,
                 LocationId = partyToCreate.LocationId,
                 PartyTime = partyToCreate.PartyTime,
-                HostId = partyToCreate.HostId,
+                HostId = _userId.ToString(),
                 Capacity = partyToCreate.Capacity,
-                Category = partyToCreate.Category
+                CategoryId = partyToCreate.Category
             };
 
             _db.Parties.Add(entity);
@@ -41,10 +41,11 @@ namespace PartyNeighbors.Services
         {
             var query = _db.Parties.Select(p => new PartyListItem
             {
-                Id = p.Id,
+                Id = p.PartyId,
                 Name = p.Name,
+                Neighborhood = p.Neighborhood.Name,
                 PartyTime = p.PartyTime,
-                Category = p.Category,
+                Category = p.Category.Name,
                 Capacity = p.Capacity
             });
             return query.ToArray();
@@ -52,25 +53,25 @@ namespace PartyNeighbors.Services
 
         public PartyDetail GetPartById(int id)
         {
-            var entity = _db.Parties.Single(p => p.Id == id);
+            var entity = _db.Parties.Single(p => p.PartyId == id);
 
             return new PartyDetail
             {
                 Name = entity.Name,
-                NeighborhoodId = entity.NeighborhoodId,
+                Neighborhood = entity.Neighborhood.Name,
                 LocationId = entity.LocationId,
                 PartyTime = entity.PartyTime,
                 HostId = entity.HostId,
                 Capacity = entity.Capacity,
-                Category = entity.Category,
-                Guests = entity.Guests,
-                PartyItems = entity.PartyItems,
+                Category = entity.Category.Name,
+                Guests = entity.Residents.Select(e => e.FullName),
+                PartyItems = entity.PartyItems.Select(e => e.Name)
             };
         }
 
         public bool EditParty(PartyEdit partyToEdit)
         {
-            var entity = _db.Parties.Single(p => p.Id == partyToEdit.Id);
+            var entity = _db.Parties.Single(p => p.PartyId == partyToEdit.Id);
 
             entity.Name = partyToEdit.Name;
             entity.NeighborhoodId = partyToEdit.NeighborhoodId;
@@ -78,14 +79,14 @@ namespace PartyNeighbors.Services
             entity.PartyTime = partyToEdit.PartyTime;
             entity.HostId = partyToEdit.HostId;
             entity.Capacity = partyToEdit.Capacity;
-            entity.Category = partyToEdit.Category;
+            entity.CategoryId = partyToEdit.Category;
 
             return _db.SaveChanges() == 1;
         }
 
         public bool DeleteParty(int id)
         {
-            var entity = _db.Parties.Single(p => p.Id == id);
+            var entity = _db.Parties.Single(p => p.PartyId == id);
             _db.Parties.Remove(entity);
             return _db.SaveChanges() == 1;
         }

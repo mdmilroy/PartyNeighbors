@@ -8,8 +8,8 @@ namespace PartyNeighbors.Models.Resident
 {
     public class ResidentListItem
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string FullName { get; set; }
-        public int NeighborhoodId { get; set; }
+        public string Neighborhood { get; set; }
     }
 }

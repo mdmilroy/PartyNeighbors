@@ -1,4 +1,6 @@
 ﻿using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -35,6 +37,89 @@ namespace PartyNeighbors.Data
         public DbSet<Resident> Residents { get; set; }
         public DbSet<Location> Locations { get; set; }
         public DbSet<PartyItem> PartyItems { get; set; }
+        public DbSet<Category> Categories { get; set; }
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder
+                .Conventions
+                .Remove<PluralizingTableNameConvention>();
+
+            modelBuilder
+                .Configurations
+                .Add(new IdentityUserLoginConfiguration())
+                .Add(new IdentityUserRoleConfiguration());
+
+            modelBuilder.Entity<Category>()
+                .HasMany(e => e.Parties)
+                .WithRequired(e => e.Category)
+                .HasForeignKey(i => i.CategoryId)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Neighborhood>()
+                .HasMany(j => j.Residents)
+                .WithRequired(e => e.Neighborhood)
+                .HasForeignKey(i => i.NeighborhoodId)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Neighborhood>()
+                .HasMany(f => f.Parties)
+                .WithRequired(e => e.Neighborhood)
+                .HasForeignKey(i => i.NeighborhoodId)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Neighborhood>()
+                .HasMany(e => e.Locations)
+                .WithMany(s => s.Neighborhoods)
+                .Map(fc =>
+                {
+                    fc.MapRightKey("LocationId");
+                    fc.MapLeftKey("NeighborhoodId");
+                    fc.ToTable("NeighborhoodLocations");
+                });
+
+            modelBuilder.Entity<Location>()
+                .HasMany(e => e.Parties)
+                .WithRequired(e => e.Location)
+                .HasForeignKey(i => i.LocationId)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Party>()
+                .HasMany(e => e.Residents)
+                .WithMany(s => s.Parties)
+                .Map(fc =>
+                {
+                    fc.MapRightKey("ResidentId");
+                    fc.MapLeftKey("PartyId");
+                    fc.ToTable("PartyResidents");
+                });
+
+            modelBuilder.Entity<Party>()
+                .HasMany(e => e.PartyItems)
+                .WithMany(s => s.Parties)
+                .Map(fc =>
+                {
+                    fc.MapRightKey("PartyItemId");
+                    fc.MapLeftKey("PartyId");
+                    fc.ToTable("PartyItemsList");
+                });
+        }
+
+    }
+
+    public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
+    {
+        public IdentityUserLoginConfiguration()
+        {
+            HasKey(iul => iul.UserId);
+        }
+    }
+
+    public class IdentityUserRoleConfiguration : EntityTypeConfiguration<IdentityUserRole>
+    {
+        public IdentityUserRoleConfiguration()
+        {
+            HasKey(iur => iur.UserId);
+        }
     }
 }

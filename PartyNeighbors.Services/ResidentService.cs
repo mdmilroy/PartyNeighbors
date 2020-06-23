@@ -28,6 +28,7 @@ namespace PartyNeighbors.Services
                 LastName = residentToCreate.LastName,
                 FullName = residentToCreate.FirstName + residentToCreate.LastName,
                 NeighborhoodId = residentToCreate.NeighborhoodId,
+                ResidentId = _userId.ToString()
             };
 
             _db.Residents.Add(entity);
@@ -38,29 +39,29 @@ namespace PartyNeighbors.Services
         {
             var query = _db.Residents.Select(r => new ResidentListItem
             {
-                Id = r.Id,
+                Id = r.ResidentId,
                 FullName = r.FullName,
-                NeighborhoodId = r.NeighborhoodId
+                Neighborhood = r.Neighborhood.Name
             });
 
             return query.ToArray();
         }
 
-        public ResidentDetail GetResidentById(int id)
+        public ResidentDetail GetResidentById(string id)
         {
-            var entity = _db.Residents.Single(r => r.Id == id);
+            var entity = _db.Residents.Single(r => r.ResidentId == id);
 
             return new ResidentDetail
             {
                 FirstName = entity.FirstName,
                 LastName = entity.LastName,
-                NeighborhoodId = entity.NeighborhoodId,
+                Neighborhood = entity.Neighborhood.Name,
             };
         }
 
         public bool EditResident(ResidentEdit residentToEdit)
         {
-            var entity = _db.Residents.Single(r => r.Id == residentToEdit.Id);
+            var entity = _db.Residents.Single(r => r.ResidentId == residentToEdit.Id);
 
             entity.FirstName = residentToEdit.FirstName;
             entity.LastName = residentToEdit.LastName;
@@ -70,9 +71,9 @@ namespace PartyNeighbors.Services
             return _db.SaveChanges() == 1;
         }
 
-        public bool DeleteResident(int id)
+        public bool DeleteResident(string id)
         {
-            var entity = _db.Residents.Single(r => r.Id == id);
+            var entity = _db.Residents.Single(r => r.ResidentId == id);
             _db.Residents.Remove(entity);
             return _db.SaveChanges() == 1;
         }
