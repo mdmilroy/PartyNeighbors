@@ -12,7 +12,7 @@ namespace PartyNeighbors.Models.Party
         public int NeighborhoodId { get; set; }
         public int LocationId { get; set; }
         public DateTimeOffset PartyTime { get; set; }
-        public int HostId { get; set; }
+        public string HostId { get; set; }
         public int CategoryId { get; set; }
         public int Capacity { get; set; }
     }

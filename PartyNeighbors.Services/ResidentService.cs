@@ -46,7 +46,7 @@ namespace PartyNeighbors.Services
             return query.ToArray();
         }
 
-        public ResidentDetail GetResidentById(int id)
+        public ResidentDetail GetResidentById(string id)
         {
             var entity = _db.Residents.Single(r => r.ResidentId == id);
 
@@ -70,7 +70,7 @@ namespace PartyNeighbors.Services
             return _db.SaveChanges() == 1;
         }
 
-        public bool DeleteResident(int id)
+        public bool DeleteResident(string id)
         {
             var entity = _db.Residents.Single(r => r.ResidentId == id);
             _db.Residents.Remove(entity);

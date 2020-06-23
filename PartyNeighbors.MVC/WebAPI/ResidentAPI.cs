@@ -53,7 +53,7 @@ namespace ResidentNeighbors.MVC.WebAPI
             return Ok();
         }
 
-        public IHttpActionResult Delete(int id)
+        public IHttpActionResult Delete(string id)
         {
             var service = CreateResidentService();
 

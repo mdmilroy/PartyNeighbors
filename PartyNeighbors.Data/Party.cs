@@ -20,7 +20,7 @@ namespace PartyNeighbors.Data
         [Required]
         public DateTimeOffset PartyTime { get; set; }
         [Required]
-        public int HostId { get; set; }
+        public string HostId { get; set; }
         [Required]
         public int Capacity { get; set; }
         public int CategoryId { get; set; }
