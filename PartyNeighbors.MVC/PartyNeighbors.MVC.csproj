@@ -179,7 +179,12 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LocationsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\NeighborhoodsController.cs" />
+    <Compile Include="Controllers\PartiesController.cs" />
+    <Compile Include="Controllers\PartyItemsController.cs" />
+    <Compile Include="Controllers\ResidentsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -339,6 +344,31 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Residents\Index.cshtml" />
+    <Content Include="Views\Residents\Details.cshtml" />
+    <Content Include="Views\Residents\Create.cshtml" />
+    <Content Include="Views\Residents\Edit.cshtml" />
+    <Content Include="Views\Residents\Delete.cshtml" />
+    <Content Include="Views\Neighborhoods\Index.cshtml" />
+    <Content Include="Views\Neighborhoods\Details.cshtml" />
+    <Content Include="Views\Neighborhoods\Create.cshtml" />
+    <Content Include="Views\Neighborhoods\Edit.cshtml" />
+    <Content Include="Views\Neighborhoods\Delete.cshtml" />
+    <Content Include="Views\Parties\Index.cshtml" />
+    <Content Include="Views\Parties\Details.cshtml" />
+    <Content Include="Views\Parties\Create.cshtml" />
+    <Content Include="Views\Parties\Edit.cshtml" />
+    <Content Include="Views\Parties\Delete.cshtml" />
+    <Content Include="Views\Locations\Index.cshtml" />
+    <Content Include="Views\Locations\Details.cshtml" />
+    <Content Include="Views\Locations\Create.cshtml" />
+    <Content Include="Views\Locations\Edit.cshtml" />
+    <Content Include="Views\Locations\Delete.cshtml" />
+    <Content Include="Views\PartyItems\Index.cshtml" />
+    <Content Include="Views\PartyItems\Details.cshtml" />
+    <Content Include="Views\PartyItems\Create.cshtml" />
+    <Content Include="Views\PartyItems\Edit.cshtml" />
+    <Content Include="Views\PartyItems\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

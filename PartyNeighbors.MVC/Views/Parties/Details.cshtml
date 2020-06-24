@@ -1,0 +1,74 @@
+﻿@model PartyNeighbors.Data.Party
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Party</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location.Name)
+        </dt>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Neighborhood.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Neighborhood.Name)
+        </dd>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PartyTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PartyTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HostId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HostId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Capacity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Capacity)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PartyId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

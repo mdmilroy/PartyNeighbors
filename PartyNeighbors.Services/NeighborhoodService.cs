@@ -26,7 +26,7 @@ namespace PartyNeighbors.Services
             {
                 Name = neighborhoodToCreate.Name,
                 City = neighborhoodToCreate.City,
-                State = neighborhoodToCreate.State,
+                StateId = neighborhoodToCreate.StateId,
                 ZipCode = neighborhoodToCreate.ZipCode
             };
 
@@ -54,7 +54,7 @@ namespace PartyNeighbors.Services
             {
                 Name = entity.Name,
                 City = entity.City,
-                State = entity.State,
+                State = entity.State.StateName,
                 ZipCode = entity.ZipCode
             };
         }
@@ -65,7 +65,7 @@ namespace PartyNeighbors.Services
 
             entity.Name = neighborhoodToEdit.Name;
             entity.City = neighborhoodToEdit.City;
-            entity.State = neighborhoodToEdit.State;
+            entity.StateId = neighborhoodToEdit.StateId;
             entity.ZipCode = neighborhoodToEdit.ZipCode;
 
             return _db.SaveChanges() == 1;

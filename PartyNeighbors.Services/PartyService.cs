@@ -30,7 +30,7 @@ namespace PartyNeighbors.Services
                 PartyTime = partyToCreate.PartyTime,
                 HostId = _userId.ToString(),
                 Capacity = partyToCreate.Capacity,
-                CategoryId = partyToCreate.Category
+                CategoryId = partyToCreate.CategoryId
             };
 
             _db.Parties.Add(entity);
@@ -79,7 +79,7 @@ namespace PartyNeighbors.Services
             entity.PartyTime = partyToEdit.PartyTime;
             entity.HostId = partyToEdit.HostId;
             entity.Capacity = partyToEdit.Capacity;
-            entity.CategoryId = partyToEdit.Category;
+            entity.CategoryId = partyToEdit.CategoryId;
 
             return _db.SaveChanges() == 1;
         }

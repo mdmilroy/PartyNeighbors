@@ -10,7 +10,7 @@ namespace PartyNeighbors.Models.Neighborhood
     {
         public string Name { get; set; }
         public string City { get; set; }
-        public string State { get; set; }
+        public int StateId { get; set; }
         public int ZipCode { get; set; }
     }
 }

@@ -103,8 +103,15 @@ namespace PartyNeighbors.Data
                     fc.MapLeftKey("PartyId");
                     fc.ToTable("PartyItemsList");
                 });
+
+            modelBuilder.Entity<State>()
+                .HasMany(e => e.Neighborhoods)
+                .WithRequired(e => e.State)
+                .HasForeignKey(i => i.StateId)
+                .WillCascadeOnDelete(false);
         }
 
+        public System.Data.Entity.DbSet<PartyNeighbors.Data.State> States { get; set; }
     }
 
     public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
