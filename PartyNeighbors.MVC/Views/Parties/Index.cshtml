@@ -27,7 +27,7 @@
             @Html.DisplayNameFor(model => model.PartyTime)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.HostId)
+            @Html.DisplayNameFor(model => model.Host)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Capacity)
@@ -53,7 +53,7 @@
             @Html.DisplayFor(modelItem => item.PartyTime)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.HostId)
+            @Html.DisplayFor(modelItem => item.Host.FullName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Capacity)

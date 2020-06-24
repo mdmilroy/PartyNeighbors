@@ -17,6 +17,7 @@ namespace PartyNeighbors.Data
         public DateTimeOffset PartyTime { get; set; }
         [Required]
         public string HostId { get; set; }
+        public virtual Resident Host { get; set; }
         [Required]
         public int Capacity { get; set; }
 
