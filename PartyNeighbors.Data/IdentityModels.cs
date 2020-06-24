@@ -84,15 +84,11 @@ namespace PartyNeighbors.Data
                 .HasForeignKey(i => i.LocationId)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Party>()
-                .HasMany(e => e.Residents)
-                .WithMany(s => s.Parties)
-                .Map(fc =>
-                {
-                    fc.MapRightKey("ResidentId");
-                    fc.MapLeftKey("PartyId");
-                    fc.ToTable("PartyResidents");
-                });
+            modelBuilder.Entity<Resident>()
+                .HasMany(f => f.Parties)
+                .WithRequired(e => e.Resident)
+                .HasForeignKey(i => i.ResidentId)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Party>()
                 .HasMany(e => e.PartyItems)

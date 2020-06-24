@@ -24,11 +24,11 @@ namespace PartyNeighbors.Services
         {
             var entity = new Party()
             {
-                Name = partyToCreate.Name,
+                PartyName = partyToCreate.PartyName,
                 NeighborhoodId = partyToCreate.NeighborhoodId,
                 LocationId = partyToCreate.LocationId,
                 PartyTime = partyToCreate.PartyTime,
-                HostId = _userId.ToString(),
+                ResidentId = _userId.ToString(),
                 Capacity = partyToCreate.Capacity,
                 CategoryId = partyToCreate.CategoryId
             };
@@ -42,9 +42,10 @@ namespace PartyNeighbors.Services
             var query = _db.Parties.Select(p => new PartyListItem
             {
                 Id = p.PartyId,
-                Name = p.Name,
+                Name = p.PartyName,
                 Neighborhood = p.Neighborhood.Name,
                 PartyTime = p.PartyTime,
+                Host = p.Resident.FullName,
                 Category = p.Category.Name,
                 Capacity = p.Capacity
             });
@@ -57,14 +58,13 @@ namespace PartyNeighbors.Services
 
             return new PartyDetail
             {
-                Name = entity.Name,
+                Name = entity.PartyName,
                 Neighborhood = entity.Neighborhood.Name,
                 LocationId = entity.LocationId,
                 PartyTime = entity.PartyTime,
-                HostId = entity.HostId,
+                HostId = entity.ResidentId,
                 Capacity = entity.Capacity,
                 Category = entity.Category.Name,
-                Guests = entity.Residents.Select(e => e.FullName),
                 PartyItems = entity.PartyItems.Select(e => e.Name)
             };
         }
@@ -73,11 +73,11 @@ namespace PartyNeighbors.Services
         {
             var entity = _db.Parties.Single(p => p.PartyId == partyToEdit.Id);
 
-            entity.Name = partyToEdit.Name;
+            entity.PartyName = partyToEdit.Name;
             entity.NeighborhoodId = partyToEdit.NeighborhoodId;
             entity.LocationId = partyToEdit.LocationId;
             entity.PartyTime = partyToEdit.PartyTime;
-            entity.HostId = partyToEdit.HostId;
+            entity.ResidentId = partyToEdit.ResidentId;
             entity.Capacity = partyToEdit.Capacity;
             entity.CategoryId = partyToEdit.CategoryId;
 

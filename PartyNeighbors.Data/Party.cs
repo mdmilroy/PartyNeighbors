@@ -12,12 +12,12 @@ namespace PartyNeighbors.Data
         [Key]
         public int PartyId { get; set; }
         [Required]
-        public string Name { get; set; }
+        public string PartyName { get; set; }
         [Required]
         public DateTimeOffset PartyTime { get; set; }
         [Required]
-        public string HostId { get; set; }
-        public virtual Resident Host { get; set; }
+        public string ResidentId { get; set; }
+        public virtual Resident Resident { get; set; }
         [Required]
         public int Capacity { get; set; }
 
@@ -37,9 +37,7 @@ namespace PartyNeighbors.Data
         public Party()
         {
             PartyItems = new HashSet<PartyItem>();
-            Residents = new HashSet<Resident>();
         }
         public virtual ICollection<PartyItem> PartyItems { get; set; }
-        public virtual ICollection<Resident> Residents { get; set; }
     }
 }

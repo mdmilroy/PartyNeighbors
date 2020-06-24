@@ -8,7 +8,7 @@ namespace PartyNeighbors.Models.Party
 {
     public class PartyCreate
     {
-        public string Name { get; set; }
+        public string PartyName { get; set; }
         public int NeighborhoodId { get; set; }
         public int LocationId { get; set; }
         public DateTimeOffset PartyTime { get; set; }
