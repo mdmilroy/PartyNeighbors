@@ -7,11 +7,13 @@ using System.Threading.Tasks;
 
 namespace PartyNeighbors.Data
 {
-    public class Location // "coding language"
+    public class Location
     {
         [Key]
+        [Display(Name = "Id")]
         public int LocationId { get; set; }
         [Required]
+        [Display(Name = "Part of Neighborhood")]
         public string Name { get; set; } // e.g. community center, pool, park, etc.
 
         public ICollection<Neighborhood> Neighborhoods { get; set; }

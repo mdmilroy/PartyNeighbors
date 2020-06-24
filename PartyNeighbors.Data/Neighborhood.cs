@@ -7,11 +7,13 @@ using System.Threading.Tasks;
 
 namespace PartyNeighbors.Data
 {
-    public class Neighborhood // "state"
+    public class Neighborhood
     {
         [Key]
+        [Display(Name = "Id")]
         public int NeighborhoodId { get; set; }
         [Required]
+        [Display(Name = "Neighborhood")]
         public string Name { get; set; }
         [Required]
         public string City { get; set; }
@@ -19,6 +21,7 @@ namespace PartyNeighbors.Data
         public int StateId { get; set; }
         public virtual State State { get; set; }
         [Required]
+        [Display(Name = "Zip Code")]
         public int ZipCode { get; set; }
 
         public ICollection<Resident> Residents { get; set; }

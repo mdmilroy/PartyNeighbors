@@ -12,6 +12,7 @@ namespace PartyNeighbors.Data
         [Key]
         [Display(Name = "State Id")]
         public int StateId { get; set; }
+
         [Display(Name = "State Name")]
         public string StateName { get; set; }
 
