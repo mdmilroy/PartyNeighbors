@@ -2,16 +2,12 @@
 using PartyNeighbors.Models.Location;
 using PartyNeighbors.Services;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
-namespace PartyNeighbors.MVC.WebAPI
+namespace PartyNeighbors.WebAPI.WebAPI
 {
     [Authorize]
-    public class LocationAPI : ApiController
+    public class LocationController : ApiController
     {
         private LocationService CreateLocationService()
         {

@@ -2,16 +2,12 @@
 using PartyNeighbors.Models.Neighborhood;
 using PartyNeighbors.Services;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
-namespace NeighborhoodNeighbors.MVC.WebAPI
+namespace PartyNeighbors.WebAPI.WebAPI
 {
     [Authorize]
-    public class NeighborhoodAPI : ApiController
+    public class NeighborhoodController : ApiController
     {
         private NeighborhoodService CreateNeighborhoodService()
         {

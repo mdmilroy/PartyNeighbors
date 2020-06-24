@@ -1,18 +1,13 @@
 ﻿using Microsoft.AspNet.Identity;
-using PartyNeighbors.Data;
 using PartyNeighbors.Models.Party;
 using PartyNeighbors.Services;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
-namespace PartyNeighbors.MVC
+namespace PartyNeighbors.WebAPI.WebAPI
 {
     [Authorize]
-    public class PartyAPI : ApiController
+    public class PartyController : ApiController
     {
         private PartyService CreatePartyService()
         {

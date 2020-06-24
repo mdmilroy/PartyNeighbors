@@ -2,16 +2,12 @@
 using PartyNeighbors.Models.Resident;
 using PartyNeighbors.Services;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
-namespace ResidentNeighbors.MVC.WebAPI
+namespace PartyNeighbors.WebAPI.WebAPI
 {
     [Authorize]
-    public class ResidentAPI : ApiController
+    public class ResidentController : ApiController
     {
         private ResidentService CreateResidentService()
         {
