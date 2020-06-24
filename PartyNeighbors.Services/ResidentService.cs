@@ -26,7 +26,7 @@ namespace PartyNeighbors.Services
             {
                 FirstName = residentToCreate.FirstName,
                 LastName = residentToCreate.LastName,
-                FullName = residentToCreate.FirstName + residentToCreate.LastName,
+                FullName = residentToCreate.FirstName + " " + residentToCreate.LastName,
                 NeighborhoodId = residentToCreate.NeighborhoodId,
                 ResidentId = _userId.ToString()
             };
@@ -65,7 +65,7 @@ namespace PartyNeighbors.Services
 
             entity.FirstName = residentToEdit.FirstName;
             entity.LastName = residentToEdit.LastName;
-            entity.LastName = residentToEdit.FirstName + residentToEdit.LastName;
+            entity.FullName = residentToEdit.FirstName + " " + residentToEdit.LastName;
             entity.NeighborhoodId = residentToEdit.NeighborhoodId;
 
             return _db.SaveChanges() == 1;

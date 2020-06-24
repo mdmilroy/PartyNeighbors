@@ -11,27 +11,35 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayNameFor(model => model.PartyName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Name)
+            @Html.DisplayFor(model => model.PartyName)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.NeighborhoodId)
+            @Html.DisplayNameFor(model => model.Category.Name)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.NeighborhoodId)
+            @Html.DisplayFor(model => model.Category.Name)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.LocationId)
+            @Html.DisplayNameFor(model => model.Location.Name)
+        </dt>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Neighborhood.Name)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.LocationId)
+            @Html.DisplayFor(model => model.Neighborhood.Name)
+        </dd>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location.Name)
         </dd>
 
         <dt>
@@ -43,11 +51,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.HostId)
+            @Html.DisplayNameFor(model => model.Resident.FullName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.HostId)
+            @Html.DisplayFor(model => model.Resident.FullName)
         </dd>
 
         <dt>
@@ -58,25 +66,9 @@
             @Html.DisplayFor(model => model.Capacity)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Category)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Category)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PartyItemId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PartyItemId)
-        </dd>
-
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PartyId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

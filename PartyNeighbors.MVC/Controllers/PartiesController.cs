@@ -6,18 +6,24 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 using PartyNeighbors.Data;
+using PartyNeighbors.Models.Party;
+using PartyNeighbors.Services;
 
 namespace PartyNeighbors.MVC.Controllers
 {
     public class PartiesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+        private PartyService _partyService;
+        private Guid _userId;
 
         // GET: Parties
         public ActionResult Index()
         {
-            return View(db.Parties.ToList());
+            var parties = db.Parties.Include(p => p.Category).Include(p => p.Resident).Include(p => p.Location).Include(p => p.Neighborhood);
+            return View(parties.ToList());
         }
 
         // GET: Parties/Details/5
@@ -38,10 +44,10 @@ namespace PartyNeighbors.MVC.Controllers
         // GET: Parties/Create
         public ActionResult Create()
         {
-            ViewBag.NeighborhoodId = new SelectList(db.Neighborhoods, "NeighborhoodId", "Name");
-            ViewBag.LocationId = new SelectList(db.Locations, "LocationId", "Name");
             ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "Name");
-
+            ViewBag.ResidentId = new SelectList(db.Residents, "ResidentId", "FirstName");
+            ViewBag.LocationId = new SelectList(db.Locations, "LocationId", "Name");
+            ViewBag.NeighborhoodId = new SelectList(db.Neighborhoods, "NeighborhoodId", "Name");
             return View();
         }
 
@@ -50,26 +56,26 @@ namespace PartyNeighbors.MVC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,NeighborhoodId,LocationId,PartyTime,HostId,Capacity,Category,PartyItemId")] Party party)
+        public ActionResult Create(PartyCreate party)
         {
             if (ModelState.IsValid)
             {
-                db.Parties.Add(party);
-                db.SaveChanges();
+                _userId = Guid.Parse(User.Identity.GetUserId());
+                _partyService = new PartyService(_userId);
+                _partyService.CreateParty(party);
                 return RedirectToAction("Index");
             }
 
+            ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "Name", party.CategoryId);
+            ViewBag.ResidentId = new SelectList(db.Residents, "ResidentId", "FirstName", party.HostId);
+            ViewBag.LocationId = new SelectList(db.Locations, "LocationId", "Name", party.LocationId);
+            ViewBag.NeighborhoodId = new SelectList(db.Neighborhoods, "NeighborhoodId", "Name", party.NeighborhoodId);
             return View(party);
         }
 
         // GET: Parties/Edit/5
         public ActionResult Edit(int? id)
         {
-            ViewBag.NeighborhoodId = new SelectList(db.Neighborhoods, "NeighborhoodId", "Name");
-            ViewBag.LocationId = new SelectList(db.Locations, "LocationId", "Name");
-            ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "Name");
-
-
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -79,6 +85,10 @@ namespace PartyNeighbors.MVC.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "Name", party.CategoryId);
+            ViewBag.LocationId = new SelectList(db.Locations, "LocationId", "Name", party.LocationId);
+            ViewBag.NeighborhoodId = new SelectList(db.Neighborhoods, "NeighborhoodId", "Name", party.NeighborhoodId);
+            ViewBag.ResidentId = new SelectList(db.Residents, "ResidentId", "FirstName", party.ResidentId);
             return View(party);
         }
 
@@ -87,7 +97,7 @@ namespace PartyNeighbors.MVC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,NeighborhoodId,LocationId,PartyTime,HostId,Capacity,Category,PartyItemId")] Party party)
+        public ActionResult Edit([Bind(Include = "PartyId,PartyName,PartyTime,ResidentId,Capacity,CategoryId,NeighborhoodId,LocationId")] Party party)
         {
             if (ModelState.IsValid)
             {
@@ -95,6 +105,10 @@ namespace PartyNeighbors.MVC.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "Name", party.CategoryId);
+            ViewBag.LocationId = new SelectList(db.Locations, "LocationId", "Name", party.LocationId);
+            ViewBag.NeighborhoodId = new SelectList(db.Neighborhoods, "NeighborhoodId", "Name", party.NeighborhoodId);
+            ViewBag.ResidentId = new SelectList(db.Residents, "ResidentId", "FirstName", party.ResidentId);
             return View(party);
         }
 

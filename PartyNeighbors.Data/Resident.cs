@@ -7,18 +7,23 @@ using System.Threading.Tasks;
 
 namespace PartyNeighbors.Data
 {
-    public class Resident // "employer"
+    public class Resident
     {
         [Key]
+        [Display(Name = "Id")]
         public string ResidentId { get; set; }
         [Required]
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
         [Required]
+        [Display(Name = "Last Name")]
         public string LastName { get; set; }
         [Required]
+        [Display(Name = "Resident Name")]
         public string FullName { get; set; }
 
         [Required]
+        [Display(Name = "Neighborhood")]
         public int NeighborhoodId { get; set; }
         public virtual Neighborhood Neighborhood { get; set; }
 

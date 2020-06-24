@@ -7,28 +7,36 @@ using System.Threading.Tasks;
 
 namespace PartyNeighbors.Data
 {
-    public class Party // "state"
+    public class Party
     {
         [Key]
+        [Display(Name = "Id")]
         public int PartyId { get; set; }
         [Required]
-        public string Name { get; set; }
+        [Display(Name = "Party Name")]
+        public string PartyName { get; set; }
         [Required]
+        [Display(Name = "Kickoff Time")]
         public DateTimeOffset PartyTime { get; set; }
         [Required]
-        public string HostId { get; set; }
+        [Display(Name = "Host")]
+        public string ResidentId { get; set; }
+        public virtual Resident Resident { get; set; }
         [Required]
         public int Capacity { get; set; }
 
         [Required]
+        [Display(Name = "Category")]
         public int CategoryId { get; set; }
         public virtual Category Category { get; set; }
 
         [Required]
+        [Display(Name = "Neighborhood")]
         public int NeighborhoodId { get; set; }
         public virtual Neighborhood Neighborhood { get; set; }
 
         [Required]
+        [Display(Name = "Part of Neighborhood")]
         public int LocationId { get; set; }
         public virtual Location Location { get; set; }
 
@@ -36,9 +44,7 @@ namespace PartyNeighbors.Data
         public Party()
         {
             PartyItems = new HashSet<PartyItem>();
-            Residents = new HashSet<Resident>();
         }
         public virtual ICollection<PartyItem> PartyItems { get; set; }
-        public virtual ICollection<Resident> Residents { get; set; }
     }
 }
