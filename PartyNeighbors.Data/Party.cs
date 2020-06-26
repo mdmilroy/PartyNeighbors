@@ -39,12 +39,5 @@ namespace PartyNeighbors.Data
         [Display(Name = "Part of Neighborhood")]
         public int LocationId { get; set; }
         public virtual Location Location { get; set; }
-
-
-        public Party()
-        {
-            PartyItems = new HashSet<PartyItem>();
-        }
-        public virtual ICollection<PartyItem> PartyItems { get; set; }
     }
 }

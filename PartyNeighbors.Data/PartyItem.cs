@@ -22,14 +22,5 @@ namespace PartyNeighbors.Data
         [Range(2,500, ErrorMessage = "Must be less than 500, but at least you and a friend...")]
         public double Price { get; set; }
         public bool Purchased { get; set; } = false;
-
-
-        public PartyItem()
-        {
-            Parties = new HashSet<Party>();
-            Residents = new HashSet<Resident>();
-        }
-        public virtual ICollection<Party> Parties { get; set; }
-        public virtual ICollection<Resident> Residents { get; set; }
     }
 }
