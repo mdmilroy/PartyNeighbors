@@ -65,7 +65,6 @@ namespace PartyNeighbors.Services
                 HostId = entity.ResidentId,
                 Capacity = entity.Capacity,
                 Category = entity.Category.Name,
-                PartyItems = entity.PartyItems.Select(e => e.Name)
             };
         }
 
