@@ -41,14 +41,6 @@ namespace PartyNeighbors.Services
             return query.ToArray();
         }
 
-        public Array GetPartyItemByPartyId(int id)
-        {
-            var entity = _db.Parties.Include(nameof(PartyItem)).Where(pi => pi.PartyId == id).Select(pi => pi.PartyItems);
-
-            return entity.ToArray();
-
-        }
-
         public bool EditPartyItem(PartyItemEdit partyItemToEdit)
         {
             var entity = _db.PartyItems.Single(p => p.PartyItemId == partyItemToEdit.Id);
