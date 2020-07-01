@@ -70,6 +70,13 @@ namespace PartyNeighbors.Services
             };
         }
 
+        //public IEnumerable<PartyListItem> GetGuests(int id)
+        //{
+        //    var query = _db.Parties.Where(p => p.PartyId == id).Select(p => p.Residents);
+
+        //    return query.ToArray();
+        //}
+
         public bool EditParty(PartyEdit partyToEdit)
         {
             var entity = _db.Parties.Single(p => p.PartyId == partyToEdit.Id);
@@ -82,6 +89,14 @@ namespace PartyNeighbors.Services
             entity.Capacity = partyToEdit.Capacity;
             entity.CategoryId = partyToEdit.CategoryId;
 
+            return _db.SaveChanges() == 1;
+        }
+
+        public bool PartyRSVP(PartyRSVP rsvp)
+        {
+            var party = _db.Parties.Find(rsvp.Id);
+            var guest = _db.Residents.Find(rsvp.GuestId);
+            party.Residents.Add(guest);
             return _db.SaveChanges() == 1;
         }
 
