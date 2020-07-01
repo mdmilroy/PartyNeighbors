@@ -20,8 +20,7 @@ namespace PartyNeighbors.Data
         public DateTimeOffset PartyTime { get; set; }
         [Required]
         [Display(Name = "Host")]
-        public string ResidentId { get; set; }
-        public virtual Resident Resident { get; set; }
+        public string HostId { get; set; }
         [Required]
         public int Capacity { get; set; }
 
@@ -39,5 +38,12 @@ namespace PartyNeighbors.Data
         [Display(Name = "Part of Neighborhood")]
         public int LocationId { get; set; }
         public virtual Location Location { get; set; }
+
+        public Party()
+        {
+            Residents = new HashSet<Resident>();
+        }
+        public virtual ICollection<Resident> Residents { get; set; }
+
     }
 }

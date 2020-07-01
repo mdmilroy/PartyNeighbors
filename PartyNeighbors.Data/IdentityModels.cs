@@ -38,6 +38,7 @@ namespace PartyNeighbors.Data
         public DbSet<Location> Locations { get; set; }
         public DbSet<PartyItem> PartyItems { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<State> States { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -85,10 +86,14 @@ namespace PartyNeighbors.Data
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Resident>()
-                .HasMany(f => f.Parties)
-                .WithRequired(e => e.Resident)
-                .HasForeignKey(i => i.ResidentId)
-                .WillCascadeOnDelete(false);
+                .HasMany(e => e.Parties)
+                .WithMany(s => s.Residents)
+                .Map(fc =>
+                {
+                    fc.MapRightKey("PartyId");
+                    fc.MapLeftKey("ResidentId");
+                    fc.ToTable("PartyResidents");
+                });
 
             modelBuilder.Entity<State>()
                 .HasMany(e => e.Neighborhoods)
@@ -97,7 +102,6 @@ namespace PartyNeighbors.Data
                 .WillCascadeOnDelete(false);
         }
 
-        public System.Data.Entity.DbSet<PartyNeighbors.Data.State> States { get; set; }
     }
 
     public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>

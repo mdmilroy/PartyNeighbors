@@ -60,7 +60,6 @@ namespace PartyNeighbors.MVC.Controllers
                 _userId = Guid.Parse(User.Identity.GetUserId());
                 _residentService = new ResidentService(_userId);
                 _residentService.CreateResident(resident);
-
                 return RedirectToAction("Index");
             }
 
