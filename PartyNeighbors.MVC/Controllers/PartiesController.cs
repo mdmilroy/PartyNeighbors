@@ -42,6 +42,21 @@ namespace PartyNeighbors.MVC.Controllers
             return View(party);
         }
 
+        // GET: Parties/Details/{id}/GuestList
+        public ActionResult Guests(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Party party = db.Parties.Find(id);
+            if (party == null)
+            {
+                return HttpNotFound();
+            }
+            return View(party.Residents.ToList());
+        }
+
         // GET: Parties/Create
         public ActionResult Create()
         {
@@ -107,6 +122,37 @@ namespace PartyNeighbors.MVC.Controllers
             ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "Name", party.CategoryId);
             ViewBag.LocationId = new SelectList(db.Locations, "LocationId", "Name", party.LocationId);
             ViewBag.NeighborhoodId = new SelectList(db.Neighborhoods, "NeighborhoodId", "Name", party.NeighborhoodId);
+            return View(party);
+        }
+
+        // GET: Parties/RSVP/{id}
+        [HttpGet]
+        public ActionResult RSVP(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Party party = db.Parties.Find(id);
+            if (party == null)
+            {
+                return HttpNotFound();
+            }
+            return View(party);
+        }
+
+        // POST: Parties/RSVP/{id}
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult RSVP(PartyRSVP party)
+        {
+            if (ModelState.IsValid)
+            {
+                _userId = Guid.Parse(User.Identity.GetUserId());
+                _partyService = new PartyService(_userId);
+                _partyService.PartyRSVP(party);
+                return RedirectToAction("Index");
+            }
             return View(party);
         }
 

@@ -63,10 +63,12 @@
     <Compile Include="PartyItem\PartyItemDetail.cs" />
     <Compile Include="PartyItem\PartyItemEdit.cs" />
     <Compile Include="PartyItem\PartyItemListItem.cs" />
+    <Compile Include="Party\GuestListItem.cs" />
     <Compile Include="Party\PartyCreate.cs" />
     <Compile Include="Party\PartyDetail.cs" />
     <Compile Include="Party\PartyEdit.cs" />
     <Compile Include="Party\PartyListItem.cs" />
+    <Compile Include="Party\PartyRSVP.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resident\ResidentCreate.cs" />
     <Compile Include="Resident\ResidentDetail.cs" />

@@ -60,7 +60,48 @@
 
     </dl>
 </div>
+
 <p>
+    <span><a id="guestsList">People Attending</a></span> |
     @Html.ActionLink("Edit", "Edit", new { id = Model.PartyId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
+
+<table class="table guests">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Residents.First().FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Neighborhood.Name)
+        </th>
+    </tr>
+
+    @foreach (var item in Model.Residents)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Neighborhood.Name)
+            </td>
+        </tr>
+    }
+</table>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.guests').hide()
+
+            $('#guestsList').on('click', () => {
+                $('.guests').toggle()
+            });
+        });
+    </script>
+}
