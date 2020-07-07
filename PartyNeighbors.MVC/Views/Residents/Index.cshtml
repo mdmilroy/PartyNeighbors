@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<PartyNeighbors.Data.Resident>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "List of Residents";
 }
 
-<h2>Index</h2>
+<h2>@ViewBag.Title</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -20,20 +20,21 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Neighborhood.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FullName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ResidentId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ResidentId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ResidentId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Neighborhood.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ResidentId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ResidentId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ResidentId })
+            </td>
+        </tr>
+    }
 
 </table>

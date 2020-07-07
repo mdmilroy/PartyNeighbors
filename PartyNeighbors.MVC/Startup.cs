@@ -1,5 +1,7 @@
 ﻿using Microsoft.Owin;
 using Owin;
+using PartyNeighbors.Data;
+using System.Linq;
 
 [assembly: OwinStartupAttribute(typeof(PartyNeighbors.MVC.Startup))]
 namespace PartyNeighbors.MVC
