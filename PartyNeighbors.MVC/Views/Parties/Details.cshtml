@@ -1,13 +1,12 @@
 ﻿@model PartyNeighbors.Data.Party
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Party Details";
 }
 
-<h2>Details</h2>
+<h2>@ViewBag.Title</h2>
 
 <div>
-    <h4>Party</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -63,6 +62,8 @@
 
 <p>
     <span><a id="guestsList">People Attending</a></span> |
+    <span><a id="RSVP">Join Us!</a></span> |
+    <span><a id="remove">Need to Cancel?</a></span> |
     @Html.ActionLink("Edit", "Edit", new { id = Model.PartyId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
@@ -97,11 +98,43 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
+            $('#remove').hide()
             $('.guests').hide()
 
             $('#guestsList').on('click', () => {
                 $('.guests').toggle()
             });
+
+            $('#RSVP').on('click', event => {
+                @addRSVP(Model.PartyId);
+                $(event.currentTarget).hide();
+                $('#remove').show();
+            });
         });
     </script>
+}
+
+@using System.Linq;
+@using Microsoft.AspNet.Identity;
+@using PartyNeighbors.Data;
+@{
+    ApplicationDbContext db = new ApplicationDbContext();
+    Party currentParty = db.Parties.Find(Model.PartyId);
+    bool addRSVP(int partyId)
+    {
+        using (var ctx = new ApplicationDbContext())
+        {
+            var user = ctx.Residents.Find(User.Identity.GetUserId());
+            var party = ctx.Parties.Single(p => p.PartyId == partyId);
+            if (party.Residents.Count() < party.Capacity)
+            {
+                party.Residents.Add(user);
+            }
+            else
+            {
+                Console.WriteLine("Sorry, this party is at max capacity. Please find another party to join.");
+            }
+            return ctx.SaveChanges() == 1;
+        };
+    }
 }

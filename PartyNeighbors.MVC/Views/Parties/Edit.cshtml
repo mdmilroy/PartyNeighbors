@@ -1,17 +1,16 @@
 ﻿@model PartyNeighbors.Data.Party
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Update an Existing Party";
 }
 
-<h2>Edit</h2>
+<h2>@ViewBag.Title</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>Party</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.PartyId)

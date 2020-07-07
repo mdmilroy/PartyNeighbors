@@ -125,37 +125,6 @@ namespace PartyNeighbors.MVC.Controllers
             return View(party);
         }
 
-        // GET: Parties/RSVP/{id}
-        [HttpGet]
-        public ActionResult RSVP(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Party party = db.Parties.Find(id);
-            if (party == null)
-            {
-                return HttpNotFound();
-            }
-            return View(party);
-        }
-
-        // POST: Parties/RSVP/{id}
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult RSVP(PartyRSVP party)
-        {
-            if (ModelState.IsValid)
-            {
-                _userId = Guid.Parse(User.Identity.GetUserId());
-                _partyService = new PartyService(_userId);
-                _partyService.PartyRSVP(party);
-                return RedirectToAction("Index");
-            }
-            return View(party);
-        }
-
         // GET: Parties/Delete/5
         public ActionResult Delete(int? id)
         {

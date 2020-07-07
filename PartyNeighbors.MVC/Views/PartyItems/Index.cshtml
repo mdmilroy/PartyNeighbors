@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<PartyNeighbors.Data.PartyItem>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "List of Party Items";
 }
 
-<h2>Index</h2>
+<h2>@ViewBag.Title</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -26,26 +26,27 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Quantity)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Price)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Purchased)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.PartyItemId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.PartyItemId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.PartyItemId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Purchased)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.PartyItemId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.PartyItemId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.PartyItemId })
+            </td>
+        </tr>
+    }
 
 </table>
