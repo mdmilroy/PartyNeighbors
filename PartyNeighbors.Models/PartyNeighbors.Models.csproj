@@ -55,6 +55,7 @@
     <Compile Include="Location\LocationDetail.cs" />
     <Compile Include="Location\LocationEdit.cs" />
     <Compile Include="Location\LocationListItem.cs" />
+    <Compile Include="Neighborhood\NeighborhoodAddLocation.cs" />
     <Compile Include="Neighborhood\NeighborhoodCreate.cs" />
     <Compile Include="Neighborhood\NeighborhoodDetail.cs" />
     <Compile Include="Neighborhood\NeighborhoodEdit.cs" />

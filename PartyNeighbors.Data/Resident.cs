@@ -27,6 +27,8 @@ namespace PartyNeighbors.Data
         public int NeighborhoodId { get; set; }
         public virtual Neighborhood Neighborhood { get; set; }
 
-        public ICollection<Party> Parties { get; set; }
+        public int PartyId { get; set; }
+        public string PartyName { get; set; }
+        public virtual ICollection<Party> Parties { get; set; }
     }
 }

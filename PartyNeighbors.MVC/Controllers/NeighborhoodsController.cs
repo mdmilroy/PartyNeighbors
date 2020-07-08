@@ -127,6 +127,30 @@ namespace PartyNeighbors.MVC.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult AddLocations(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Neighborhood neighborhood = db.Neighborhoods.Find(id);
+            if (neighborhood == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.LocationId = new MultiSelectList(db.Locations, "LocationId", "Name", neighborhood.Locations);
+            return View(neighborhood);
+        }
+
+        [HttpPost]
+        public ActionResult AddLocations(NeighborhoodAddLocation locationToAdd)
+        {
+            _userId = Guid.Parse(User.Identity.GetUserId());
+            _neighborhoodService = new NeighborhoodService(_userId);
+            _neighborhoodService.AddLocation(locationToAdd);
+            return View();
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

@@ -42,7 +42,7 @@
                 @Html.DisplayFor(modelItem => item.ZipCode)
             </td>
             <td>
-                @*@Html.ActionLink("Locations", "Index", "Locations", new { id = item.NeighborhoodId }) |*@
+                @Html.ActionLink("Locations", "AddLocations", new { id = item.NeighborhoodId }) |
                 @Html.ActionLink("Edit", "Edit", new { id = item.NeighborhoodId }) |
                 @Html.ActionLink("Details", "Details", new { id = item.NeighborhoodId }) |
                 @Html.ActionLink("Delete", "Delete", new { id = item.NeighborhoodId })

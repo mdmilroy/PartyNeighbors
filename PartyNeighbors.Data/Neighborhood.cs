@@ -12,24 +12,34 @@ namespace PartyNeighbors.Data
         [Key]
         [Display(Name = "Id")]
         public int NeighborhoodId { get; set; }
+
         [Required]
         [Display(Name = "Neighborhood")]
         public string Name { get; set; }
+
         [Required]
         public string City { get; set; }
-        [Required]
-        public int StateId { get; set; }
-        public virtual State State { get; set; }
+
         [Required]
         [Display(Name = "Zip Code")]
         public int ZipCode { get; set; }
 
-        public ICollection<Resident> Residents { get; set; }
-        public ICollection<Party> Parties { get; set; }
-        public Neighborhood()
-        {
-            Locations = new HashSet<Location>();
-        }
+        [Required]
+        public int StateId { get; set; }
+        public virtual State State { get; set; }
+
+
+        public int ResidentId { get; set; }
+        public string ResidentName { get; set; }
+        public virtual ICollection<Resident> Residents { get; set; }
+
+        public int PartyId { get; set; }
+        public string PartyName { get; set; }
+        public virtual ICollection<Party> Parties { get; set; }
+
+        public int LocationId { get; set; }
+        public string LocationName { get; set; }
         public virtual ICollection<Location> Locations { get; set; }
+        public string[] MultipleLocations { get; set; }
     }
 }
