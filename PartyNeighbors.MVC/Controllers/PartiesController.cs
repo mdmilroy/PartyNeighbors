@@ -61,8 +61,8 @@ namespace PartyNeighbors.MVC.Controllers
         public ActionResult Create()
         {
             ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "Name");
-            ViewBag.LocationId = new SelectList(db.Locations, "LocationId", "Name");
             ViewBag.NeighborhoodId = new SelectList(db.Neighborhoods, "NeighborhoodId", "Name");
+            ViewBag.LocationId = new SelectList(db.Locations, "LocationId", "Name");
             return View();
         }
 

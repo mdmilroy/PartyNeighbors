@@ -1,0 +1,65 @@
+﻿@model PartyNeighbors.Data.Neighborhood
+@{ var db = new PartyNeighbors.Data.ApplicationDbContext(); }
+
+@{
+    ViewBag.Title = "Add Locations";
+}
+
+<h2>AddLocations</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.NeighborhoodId)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.LocationId, "Location", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10 LocationId">
+            @Html.ListBox("LocationId", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.LocationId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+    </div>
+
+    <br />
+    <hr />
+    <br />
+}
+
+<table class="table">
+    <tr>
+        <th>
+            <h2>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h2>
+        </th>
+        <th></th>
+    </tr>
+    <tr>
+        <th>
+            Current @Html.DisplayNameFor(model => model.LocationName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Locations)
+    {
+        <tr>
+            <td style="border: none;">
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td style="border: none;"></td>
+        </tr>
+    }
+</table>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $('.chosen-select').chosen();
+    </script>
+}

@@ -40,7 +40,8 @@ namespace PartyNeighbors.Services
             {
                 Id = n.NeighborhoodId,
                 City = n.City,
-                Name = n.Name
+                Name = n.Name,
+                State = n.State.StateName
             });
 
             return query.ToArray();
@@ -55,7 +56,8 @@ namespace PartyNeighbors.Services
                 Name = entity.Name,
                 City = entity.City,
                 State = entity.State.StateName,
-                ZipCode = entity.ZipCode
+                ZipCode = entity.ZipCode,
+                Locations = entity.Locations.Select(l => l.Name).ToList()
             };
         }
 
@@ -79,5 +81,13 @@ namespace PartyNeighbors.Services
             return _db.SaveChanges() == 1;
         }
 
+        public bool AddLocation(NeighborhoodAddLocation locationToAdd)
+        {
+            var neighborhood = _db.Neighborhoods.Single(n => n.NeighborhoodId == locationToAdd.NeighborhoodId);
+            var location = _db.Locations.Single(n => n.LocationId == locationToAdd.LocationId);
+            neighborhood.Locations.Add(location);
+
+            return _db.SaveChanges() == 1;
+        }
     }
 }

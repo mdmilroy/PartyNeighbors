@@ -11,6 +11,7 @@ namespace PartyNeighbors.Models.Party
         public int Id { get; set; }
         public string Name { get; set; }
         public string Neighborhood { get; set; }
+        public string Location { get; set; }
         public DateTimeOffset PartyTime { get; set; }
         public string Host { get; set; }
         public string Category { get; set; }
