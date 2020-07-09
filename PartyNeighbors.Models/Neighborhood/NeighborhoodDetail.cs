@@ -12,5 +12,6 @@ namespace PartyNeighbors.Models.Neighborhood
         public string City { get; set; }
         public string State { get; set; }
         public int ZipCode { get; set; }
+        public List<string> Locations { get; set; }
     }
 }
