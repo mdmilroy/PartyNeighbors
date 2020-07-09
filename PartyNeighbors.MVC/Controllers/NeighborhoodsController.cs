@@ -138,17 +138,22 @@ namespace PartyNeighbors.MVC.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.LocationId = new MultiSelectList(db.Locations, "LocationId", "Name", neighborhood.Locations);
+            ViewBag.LocationId = new SelectList(db.Locations, "LocationId", "Name", neighborhood.LocationId);
             return View(neighborhood);
         }
 
         [HttpPost]
         public ActionResult AddLocations(NeighborhoodAddLocation locationToAdd)
         {
-            _userId = Guid.Parse(User.Identity.GetUserId());
-            _neighborhoodService = new NeighborhoodService(_userId);
-            _neighborhoodService.AddLocation(locationToAdd);
-            return View();
+            if (ModelState.IsValid)
+            {
+                _userId = Guid.Parse(User.Identity.GetUserId());
+                _neighborhoodService = new NeighborhoodService(_userId);
+                _neighborhoodService.AddLocation(locationToAdd);
+                return RedirectToAction("AddLocations"); // This line is what allows a location to be added without changing the page
+            }
+            ViewBag.LocationId = new SelectList(db.Locations, "LocationId", "Name");
+            return View("AddLocations");
         }
 
         protected override void Dispose(bool disposing)

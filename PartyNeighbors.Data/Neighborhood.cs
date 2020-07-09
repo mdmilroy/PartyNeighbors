@@ -40,6 +40,5 @@ namespace PartyNeighbors.Data
         public int LocationId { get; set; }
         public string LocationName { get; set; }
         public virtual ICollection<Location> Locations { get; set; }
-        public string[] MultipleLocations { get; set; }
     }
 }

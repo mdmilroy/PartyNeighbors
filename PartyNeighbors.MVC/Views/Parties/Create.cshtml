@@ -92,18 +92,6 @@
                     controlType: 'select',
                     timeFormat: 'hh:mm TT'
                 });
-            }),
-            $("#NeighborhoodId").change(function () {
-                $(".LocationId").show()
-                $.get("/CascadeDropDowns/GetLocationsList", {
-                    NeighborhoodId: $("#NeighborhoodId").val()
-                }, function (data) {
-                    $("#LocationId").empty();
-                    $.each(data, function (index, row) {
-                        $("#LocationId").append("<option value='" + row.LocationId + "'>" + row.Name + "</option>")
-                    });
-                });
-            })
         });
     </script>
 }
