@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.Ajax.Utilities;
 using Microsoft.AspNet.Identity;
 using PartyNeighbors.Data;
 using PartyNeighbors.Models.Party;
@@ -18,12 +19,12 @@ namespace PartyNeighbors.MVC.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
         private PartyService _partyService;
         private Guid _userId;
+        private Neighborhood neighborhood = new Neighborhood();
+
         // GET: Parties
         public ActionResult Index()
         {
-            _userId = Guid.Parse(User.Identity.GetUserId());
-            _partyService = new PartyService(_userId);
-            var parties = _partyService.GetParties();
+            var parties = db.Parties;
             return View(parties.ToList());
         }
 
@@ -82,8 +83,8 @@ namespace PartyNeighbors.MVC.Controllers
             }
 
             ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "Name", party.CategoryId);
-            ViewBag.LocationId = new SelectList(db.Locations, "LocationId", "Name", party.LocationId);
             ViewBag.NeighborhoodId = new SelectList(db.Neighborhoods, "NeighborhoodId", "Name", party.NeighborhoodId);
+            ViewBag.LocationId = new SelectList(db.Locations, "LocationId", "Name", party.LocationId);
             return View(party);
         }
 
