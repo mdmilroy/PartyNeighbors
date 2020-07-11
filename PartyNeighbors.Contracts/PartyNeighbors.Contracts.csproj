@@ -51,11 +51,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ILocationService.cs" />
+    <Compile Include="INeighborhoodService.cs" />
+    <Compile Include="IPartyService.cs" />
+    <Compile Include="IResidentService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PartyNeighbors.Models\PartyNeighbors.Models.csproj">
+      <Project>{63F5E034-3EF4-4641-B779-20492E16D74A}</Project>
+      <Name>PartyNeighbors.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
