@@ -22,6 +22,7 @@ namespace PartyNeighbors.Data
         [Display(Name = "Host")]
         public string HostId { get; set; }
         [Required]
+        [Range(2, 100, ErrorMessage = "Due to COVID-19 and CDC Guidelines, parties are currently capped at 100 people. But you do at least need space for one friend to post a party")]
         public int Capacity { get; set; }
 
         [Required]
