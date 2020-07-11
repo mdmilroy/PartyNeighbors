@@ -7,6 +7,7 @@
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    margin: 0 auto;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -20,5 +21,79 @@
 input,
 select,
 textarea {
-    max-width: 280px;
+    max-width: 150rem;
+    justify-content: center;
+}
+
+.wrapper {
+    height: auto;
+    width: 100%;
+    position: relative;
+    border: thin black solid;
+    display: inline-flex;
+}
+
+@media (min-width: 750px) {
+    .sidebar, .mainContent {
+        height: auto;
+        padding: 2rem;
+        border: thin black solid;
+    }
+
+    .mainContent {
+        height: 100%;
+        border: thin black solid;
+    }
+
+    .sideInfo {
+        position: relative;
+        display: inline-flex;
+        flex-direction: column;
+        width: 20rem;
+        height: 30%;
+        border: thin black solid;
+        justify-content: space-between;
+        align-content: center;
+        margin-top: 1rem;
+    }
+
+    .smallScreenSideBar {
+        display: none;
+        justify-content: center;
+        align-content: center;
+    }
+}
+
+@media (max-width: 749px) {
+    .sidebar {
+        display: none;
+    }
+
+    .sideInfo {
+        position: relative;
+        display: inline-flex;
+        flex-direction: column;
+        width: 20rem;
+        height: 30%;
+        border: thin black solid;
+        justify-content: center;
+        align-content: center;
+        margin: 1rem auto;
+    }
+
+    .smallScreenSideBar {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+    }
+}
+
+.footer {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }

@@ -38,10 +38,9 @@
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
+        <div class="navbar navbar-inverse navbar-fixed-bottom footer">
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+        </div>
     </div>
 
     @Scripts.Render("~/bundles/bootstrap")
