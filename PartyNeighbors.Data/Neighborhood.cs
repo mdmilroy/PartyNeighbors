@@ -21,7 +21,7 @@ namespace PartyNeighbors.Data
         public string City { get; set; }
 
         [Required]
-        [MinLength(5), MaxLength(5)]
+        [Range(10000, 99999, ErrorMessage = "Please enter your 5-digit zip code.")]
         [Display(Name = "Zip Code")]
         public int ZipCode { get; set; }
 
