@@ -13,10 +13,10 @@ namespace PartyNeighbors.Data
         [Display(Name = "Id")]
         public string ResidentId { get; set; }
         [Required]
-        [Display(Name = "First Name")]
+        [Display(Name = "First Name"), StringLength(25,ErrorMessage = "Your first name must be 25 characters or less.")]
         public string FirstName { get; set; }
         [Required]
-        [Display(Name = "Last Name")]
+        [Display(Name = "Last Name"), StringLength(50, ErrorMessage = "Your last name must be 50 characters or less.")]
         public string LastName { get; set; }
         [Required]
         [Display(Name = "Resident Name")]

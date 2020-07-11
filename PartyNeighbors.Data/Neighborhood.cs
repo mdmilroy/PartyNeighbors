@@ -21,6 +21,7 @@ namespace PartyNeighbors.Data
         public string City { get; set; }
 
         [Required]
+        [MinLength(5), MaxLength(5)]
         [Display(Name = "Zip Code")]
         public int ZipCode { get; set; }
 
