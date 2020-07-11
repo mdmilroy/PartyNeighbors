@@ -25,6 +25,22 @@ textarea {
     justify-content: center;
 }
 
+.logo {
+    width: 40px;
+    height: 40px;
+    margin: auto;
+}
+
+.jumbotron {
+    background-image: url("../Assets/photo-1525489196064-0752fa4e16f2.jpg");
+    background-size: 100%;
+}
+
+.jumbotron .jb {
+    width: 50%;
+    margin: auto;
+}
+
 .wrapper {
     height: auto;
     width: 100%;
@@ -32,6 +48,7 @@ textarea {
     border: thin black solid;
     display: inline-flex;
     padding: 0;
+    margin: 1rem auto 5rem auto;
 }
 
 @media (min-width: 750px) {
@@ -95,7 +112,6 @@ textarea {
 .footer {
     color: white;
     display: flex;
-    margin: 0;
     padding-top: 1.5rem;
     text-align: center;
     align-content: center;

@@ -197,6 +197,38 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\alexander-dummer-ncyGJJ0TSLM-unsplash.jpg" />
+    <Content Include="Assets\anshu-a-yAXbfq1wI7I-unsplash.jpg" />
+    <Content Include="Assets\avi-waxman-ZdtOy25eNn4-unsplash.jpg" />
+    <Content Include="Assets\blake-mccleary-x9thQms7d5w-unsplash.jpg" />
+    <Content Include="Assets\brandon-gurney-O-AS_YE0yeA-unsplash.jpg" />
+    <Content Include="Assets\elisabeth-arnold-QL5PgKelw4s-unsplash.jpg" />
+    <Content Include="Assets\emily-jo-sutcliffe-GJsL5ZlfpPI-unsplash.jpg" />
+    <Content Include="Assets\gaelle-marcel-vrkSVpOwchk-unsplash.jpg" />
+    <Content Include="Assets\hedi-alija-rYISpXMfDtM-unsplash.jpg" />
+    <Content Include="Assets\iconfinder_linkedin_312513.png" />
+    <Content Include="Assets\janko-ferlic-MIUqc2mmdBA-unsplash.jpg" />
+    <Content Include="Assets\jordan-hopkins-wFkcKOoZHg0-unsplash.jpg" />
+    <Content Include="Assets\kelsey-chance-ZrhtQyGFG6s-unsplash.jpg" />
+    <Content Include="Assets\kristina-evstifeeva-y3h6gh2fpaI-unsplash.jpg" />
+    <Content Include="Assets\kseniia-ilinykh-yvt-SSxzgLI-unsplash.jpg" />
+    <Content Include="Assets\liz-sanchez-vegas-QeHfIIkKiKo-unsplash.jpg" />
+    <Content Include="Assets\mark-adriane-muS2RraYRuQ-unsplash.jpg" />
+    <Content Include="Assets\markus-spiske-1S0-pHmQ-TY-unsplash.jpg" />
+    <Content Include="Assets\mi-pham-FtZL0r4DZYk-unsplash.jpg" />
+    <Content Include="Assets\neonbrand-iPgQJEcGoE0-unsplash.jpg" />
+    <Content Include="Assets\nikita-kachanovsky-bLY5JqP_Ldw-unsplash.jpg" />
+    <Content Include="Assets\photo-1525489196064-0752fa4e16f2.jpg" />
+    <Content Include="Assets\senjuti-kundu-JfolIjRnveY-unsplash.jpg" />
+    <Content Include="Assets\shirota-yuri-p0hDztR46cw-unsplash.jpg" />
+    <Content Include="Assets\sofiya-levchenko-l6yLVM-FJxc-unsplash.jpg" />
+    <Content Include="Assets\susn-matthiessen-5mzeMzA623U-unsplash.jpg" />
+    <Content Include="Assets\united-nations-covid-19-response-o2hMsIyjbGE-unsplash.jpg" />
+    <Content Include="Assets\united-nations-covid-19-response-SAm6u_9haMk-unsplash.jpg" />
+    <Content Include="Assets\united-nations-covid-19-response-ZSlxMFLLcU4-unsplash.jpg" />
+    <Content Include="Assets\you-x-ventures-Oalh2MojUuk-unsplash.jpg" />
+    <Content Include="Assets\yutacar-JKMnm3CIncw-unsplash.jpg" />
+    <Content Include="Assets\zoriana-stakhniv-d_9i9TaOxfI-unsplash.jpg" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -380,7 +412,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Assets\" />
     <Folder Include="Views\CascadeDropDowns\" />
   </ItemGroup>
   <ItemGroup>
