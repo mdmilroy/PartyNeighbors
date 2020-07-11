@@ -1,4 +1,5 @@
-﻿using PartyNeighbors.Data;
+﻿using PartyNeighbors.Contracts;
+using PartyNeighbors.Data;
 using PartyNeighbors.Models.Neighborhood;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace PartyNeighbors.Services
 {
-    public class NeighborhoodService
+    public class NeighborhoodService : INeighborhoodService
     {
         private readonly Guid _userId;
         private ApplicationDbContext _db = new ApplicationDbContext();

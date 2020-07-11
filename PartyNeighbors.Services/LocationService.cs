@@ -1,4 +1,5 @@
-﻿using PartyNeighbors.Data;
+﻿using PartyNeighbors.Contracts;
+using PartyNeighbors.Data;
 using PartyNeighbors.Models.Location;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace PartyNeighbors.Services
 {
-    public class LocationService
+    public class LocationService : ILocationService
     {
         private readonly Guid _userId;
         private ApplicationDbContext _db = new ApplicationDbContext();

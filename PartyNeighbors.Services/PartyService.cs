@@ -1,4 +1,5 @@
-﻿using PartyNeighbors.Data;
+﻿using PartyNeighbors.Contracts;
+using PartyNeighbors.Data;
 using PartyNeighbors.Models.Party;
 using System;
 using System.Collections;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace PartyNeighbors.Services
 {
-    public class PartyService
+    public class PartyService : IPartyService
     {
         private readonly Guid _userId;
         private ApplicationDbContext _db = new ApplicationDbContext();
@@ -53,7 +54,7 @@ namespace PartyNeighbors.Services
             return query.ToArray();
         }
 
-        public PartyDetail GetPartById(int id)
+        public PartyDetail GetPartyById(int id)
         {
             var host = _db.Residents.Find(_userId.ToString());
             var entity = _db.Parties.Single(p => p.PartyId == id);
