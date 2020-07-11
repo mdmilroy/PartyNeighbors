@@ -42,7 +42,6 @@ namespace PartyNeighbors.Services
             {
                 Id = r.ResidentId,
                 FullName = r.FullName,
-                Neighborhood = r.Neighborhood.Name
             });
 
             return query.ToArray();

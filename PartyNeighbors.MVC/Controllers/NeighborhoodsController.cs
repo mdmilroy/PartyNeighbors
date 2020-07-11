@@ -127,6 +127,35 @@ namespace PartyNeighbors.MVC.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult AddLocations(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Neighborhood neighborhood = db.Neighborhoods.Find(id);
+            if (neighborhood == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.LocationId = new SelectList(db.Locations, "LocationId", "Name", neighborhood.LocationId);
+            return View(neighborhood);
+        }
+
+        [HttpPost]
+        public ActionResult AddLocations(NeighborhoodAddLocation locationToAdd)
+        {
+            if (ModelState.IsValid)
+            {
+                _userId = Guid.Parse(User.Identity.GetUserId());
+                _neighborhoodService = new NeighborhoodService(_userId);
+                _neighborhoodService.AddLocation(locationToAdd);
+                return RedirectToAction("AddLocations"); // This line is what allows a location to be added without changing the page
+            }
+            ViewBag.LocationId = new SelectList(db.Locations, "LocationId", "Name");
+            return View("AddLocations");
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

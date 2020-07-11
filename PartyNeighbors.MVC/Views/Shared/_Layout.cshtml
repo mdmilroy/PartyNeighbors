@@ -6,6 +6,7 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
 
 </head>
 <body>
@@ -24,12 +25,12 @@
                     @*<li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
-                    <li>@Html.ActionLink("Residents", "Index", "Residents")</li>
                     <li>@Html.ActionLink("Neighborhoods", "Index", "Neighborhoods")</li>
-                    <li>@Html.ActionLink("Locations", "Index", "Locations")</li>
-                    <li>@Html.ActionLink("Party Items", "Index", "PartyItems")</li>
+                    <li>@Html.ActionLink("Residents", "Index", "Residents")</li>
                     <li>@Html.ActionLink("Categories", "Index", "Categories")</li>
+                    <li>@Html.ActionLink("Locations", "Index", "Locations")</li>
                     <li>@Html.ActionLink("Parties", "Index", "Parties")</li>
+                    @*<li>@Html.ActionLink("Party Items", "Index", "PartyItems")</li>*@
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -43,7 +44,6 @@
         </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
