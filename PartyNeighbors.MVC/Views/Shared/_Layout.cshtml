@@ -4,10 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Party Neighbors Landing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Fredericka+the+Great&family=Kalam:wght@300&family=Monoton&family=Permanent+Marker&family=Rock+Salt&display=swap" rel="stylesheet">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
-
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -18,9 +18,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbard-brand" href="#">
-                    <img class="logo" src="~/Assets/iconfinder_linkedin_312513.png"/>
-                </a>
+                @Html.ActionLink("Party 'N", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
