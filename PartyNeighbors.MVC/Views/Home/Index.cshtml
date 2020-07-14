@@ -3,39 +3,49 @@
 }
 
 <div class="jumbotron jumbotron-fluid">
-  <div class="container jb">
-    <h1 class="display-4">Fluid jumbotron</h1>
-    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-  </div>
+    <div class="container jb">
+        <h1 class="display-4">Are you ready to <u>PARTY?</u></h1>
+    </div>
 </div>
 
 <div class="col-md-4 wrapper">
     <div class="container-fluid sidebar card-deck">
         <div class="card">
-            <img class="card-img-top" src="..." alt="Card image cap">
+            <img class="card-img-top img-responsive" src="~/Assets/emily-jo-sutcliffe-GJsL5ZlfpPI-unsplash.jpg" width="375" height="200" alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text">
+                    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti
+                    quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia
+                    deserunt mollitia animi, id est laborum et dolorum fuga.
+                </p>
             </div>
             <div class="card-footer">
                 <button class="btn btn-default controllerBtn" role="button">@Html.ActionLink("Neighborhoods", "Index", "Neighborhoods") &raquo;</button>
             </div>
         </div>
+        <hr />
         <div class="card">
-            <img class="card-img-top" src="..." alt="Card image cap">
+            <img class="card-img-top img-responsive" src="~/Assets/gaelle-marcel-vrkSVpOwchk-unsplash.jpg" width="375" height="200" alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text">
+                    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti
+                    quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia
+                    deserunt mollitia animi, id est laborum et dolorum fuga.
+                </p>
             </div>
             <div class="card-footer">
                 <button class="btn btn-default controllerBtn" role="button">@Html.ActionLink("Parties", "Index", "Parties") &raquo;</button>
             </div>
         </div>
+        <hr />
         <div class="card">
-            <img class="card-img-top" src="..." alt="Card image cap">
+            <img class="card-img-top img-responsive" src="~/Assets/hedi-alija-rYISpXMfDtM-unsplash.jpg" width="375" height="200" alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text">
+                    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti
+                    quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia
+                    deserunt mollitia animi, id est laborum et dolorum fuga.
+                </p>
             </div>
             <div class="card-footer">
                 <button class="btn btn-default controllerBtn" role="button">@Html.ActionLink("Categories", "Index", "Categories") &raquo;</button>
@@ -44,69 +54,96 @@
     </div>
 
     <div class="container-fluid mainContent">
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         @* Hidden with screen sizes larger than 750px *@
-    <div class="card-deck smallScreenSideBar">
-        <div class="card">
-            <img class="card-img-top" src="..." alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <div id="slides" class="carousel container-fluid slide center-block" data-ride="carousel" data-interval="4000">
+            <div id="slides" class="carousel-inner">
+                <div class="item active">
+                    <img src="~/Assets/elisabeth-arnold-QL5PgKelw4s-unsplash.jpg" alt="Evening Escape">
+                </div>
+                <div class="item">
+                    <img src="~/Assets/kelsey-chance-ZrhtQyGFG6s-unsplash.jpg" alt="Brunch">
+                </div>
+                <div class="item">
+                    <img src="~/Assets/you-x-ventures-Oalh2MojUuk-unsplash.jpg" alt="Proessional Meetup">
+                </div>
             </div>
-            <div class="card-footer">
-                <button class="btn btn-default controllerBtn" role="button">@Html.ActionLink("Neighborhoods", "Index", "Neighborhoods") &raquo;</button>
+            @*slide controls if desired to be used again*@
+            <a class="left carousel-control" href="#slides" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#slides" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div>
+
+        <div class="container-fluid smallScreenSideBar card-deck">
+            <div class="card">
+                <img class="card-img-top" src="~/Assets/emily-jo-sutcliffe-GJsL5ZlfpPI-unsplash.jpg" width="375" height="200" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text">
+                        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti
+                        quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia
+                        deserunt mollitia animi, id est laborum et dolorum fuga.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-default controllerBtn" role="button">@Html.ActionLink("Neighborhoods", "Index", "Neighborhoods") &raquo;</button>
+                </div>
+            </div>
+            <hr />
+            <div class="card">
+                <img class="card-img-top" src="~/Assets/gaelle-marcel-vrkSVpOwchk-unsplash.jpg" width="375" height="200" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text">
+                        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti
+                        quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia
+                        deserunt mollitia animi, id est laborum et dolorum fuga.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-default controllerBtn" role="button">@Html.ActionLink("Parties", "Index", "Parties") &raquo;</button>
+                </div>
+            </div>
+            <hr />
+            <div class="card">
+                <img class="card-img-top" src="~/Assets/hedi-alija-rYISpXMfDtM-unsplash.jpg" width="375" height="200" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text">
+                        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti
+                        quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia
+                        deserunt mollitia animi, id est laborum et dolorum fuga.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-default controllerBtn" role="button">@Html.ActionLink("Categories", "Index", "Categories") &raquo;</button>
+                </div>
             </div>
         </div>
-        <div class="card">
-            <img class="card-img-top" src="..." alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-            <div class="card-footer">
-                <button class="btn btn-default controllerBtn" role="button">@Html.ActionLink("Parties", "Index", "Parties") &raquo;</button>
-            </div>
-        </div>
-        <div class="card">
-            <img class="card-img-top" src="..." alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-            <div class="card-footer">
-                <button class="btn btn-default controllerBtn" role="button">@Html.ActionLink("Categories", "Index", "Categories") &raquo;</button>
-            </div>
-        </div>
-    </div>
+        <hr />
         @* ---------------------------------------- *@
+
+        @* Use this Google Map and drop pinpoints for locations in db *@
+        <div class="mapOuter container-fluid">
+            <div class="gmap_canvas container-fluid">
+                <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=carlsbad%2C%20california&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                <a href="https://www.whatismyip-address.com">ip</a>
+            </div>
+            <style>
+                .mapouter {
+                    position: relative;
+                    text-align: right;
+                }
+
+                .gmap_canvas {
+                    overflow: hidden;
+                    background: none !important;
+                    height: 500px;
+                    width: 600px;
+                }
+            </style>
+        </div>
+        <br />
     </div>
 </div>
+

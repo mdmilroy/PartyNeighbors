@@ -1,4 +1,14 @@
-﻿body {
+﻿/* Fonts from GoogleFonts
+
+    font-family: 'Audiowide', cursive;
+    font-family: 'Fredericka the Great', cursive;
+    font-family: 'Kalam', cursive;
+    font-family: 'Monoton', cursive;
+    font-family: 'Permanent Marker', cursive;
+    font-family: 'Rock Salt', cursive;
+*/
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
@@ -8,6 +18,11 @@
     padding-left: 15px;
     padding-right: 15px;
     margin: 0 auto;
+}
+
+.body-content p {
+    font-family: 'Calisto MT';
+    text-align: justify
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -25,47 +40,100 @@ textarea {
     justify-content: center;
 }
 
-.logo {
-    width: 40px;
-    height: 40px;
-    margin: auto;
+.navbar-brand {
+    font-family: 'Rock Salt', cursive;
+    color: #DE6500 !important;
 }
 
 .jumbotron {
-    background-image: url("../Assets/photo-1525489196064-0752fa4e16f2.jpg");
-    background-size: 100%;
+    background-image: linear-gradient(to top left, yellow, #DE6500, #DE6500 );
+    
 }
 
 .jumbotron .jb {
-    width: 50%;
-    margin: auto;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    font-family: 'Permanent Marker', cursive;
 }
 
 .wrapper {
     height: auto;
     width: 100%;
     position: relative;
-    border: thin black solid;
-    display: inline-flex;
-    padding: 0;
-    margin: 1rem auto 5rem auto;
+
+    display: flex;
+    padding: 0 0 5rem 0;
+    align-content: center;
+    justify-content: center;
 }
 
-@media (min-width: 750px) {
+.img-responsive {
+    margin: auto;
+}
+
+.mainContent {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    position: relative;
+    flex-shrink: 1;
+    align-content: center;
+    justify-content: center;
+}
+
+.carousel, .carousel-inner {
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    flex-shrink: 1;
+    overflow: hidden;
+    position: relative;
+    padding: 0;
+}
+
+.card {
+    text-align: center;
+}
+
+.mapOuter {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
+    width: 100%;
+    margin: auto;
+}
+
+#gmap_canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    padding-top: 5rem;
+    display: flex;
+    flex-shrink: 1;
+}
+
+@media (min-width: 771px) {
+    
     .sidebar, .mainContent {
         height: auto;
-        width: auto;
-        border: thin black solid;
         margin: 1rem;
+        max-width: 60%;
+    }
+
+    .sidebar {
+        border-right: medium #C6C6C6 solid;
     }
 
     .sideInfo {
         position: relative;
         display: inline-flex;
         flex-direction: column;
-        width: 20rem;
+        max-width: 40%;
         height: 30%;
-        border: thin black solid;
         justify-content: space-between;
         align-content: center;
         margin-top: 1rem;
@@ -78,35 +146,55 @@ textarea {
     }
 }
 
-@media (max-width: 749px) {
+@media (max-width: 770px) {
+    .mainContent {
+        max-width: 90%;
+        display: flex;
+        flex-direction: column;
+        margin: 1rem;
+        justify-content: center;
+        align-content: center;
+    }
+
     .sidebar {
         display: none;
     }
 
-    .sideInfo {
-        position: relative;
-        display: inline-flex;
+    .card {
+        display: flex;
         flex-direction: column;
-        width: 20rem;
-        height: 30%;
-        border: thin black solid;
-        justify-content: center;
         align-content: center;
-        margin: 1rem auto;
+        justify-content: center;
+    }
+
+    .card img {
+        margin: auto;
     }
 
     .smallScreenSideBar {
+        position: relative;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-content: center;
+        justify-content: center;
         margin-top: 5rem;
-        margin-bottom: 5rem;
+    }
+
+    .sideInfo {
+        position: relative;
+        display: flex;
+        width: 50%;
+        height: 30%;
+        margin-top: 5rem;
     }
 }
 
-.controllerBtn {
-    margin-bottom: 1rem;
+.card-footer {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    font-family: 'Rock Salt', cursive;
 }
 
 .footer {
@@ -117,3 +205,7 @@ textarea {
     align-content: center;
     justify-content: center;
 }
+
+    .footer p {
+        font-family: 'Rock Salt', cursive;
+    }
