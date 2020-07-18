@@ -23,7 +23,8 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    @*<li>@Html.ActionLink("About", "About", "Home")</li>*@
+                    <li><a href="#" id="aboutUs">About Us</a></li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Residents", "Index", "Residents")</li>
                     <li>@Html.ActionLink("Locations", "Index", "Locations")</li>
@@ -40,7 +41,60 @@
         </div>
     </div>
 
+    <div class="modal fade" id="AboutModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#" class="close" data-dismiss="modal">&times;</a>
+                    <h4 class="modal-title">Get to Know Us!</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti
+                        quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia
+                        deserunt mollitia animi, id est laborum et dolorum fuga.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <div class="btn btn-secondary close" data-dismiss="modal">Close</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="AboutModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#" class="close" data-dismiss="modal">&times;</a>
+                    <h4 class="modal-title">Get to Know Us!</h4>
+                </div>
+                <div class="modal-body">
+                      
+                    <text class=""></text>
+                    <text></text>
+                    <text></text>
+                </div>
+                <div class="modal-footer">
+                    <div class="btn btn-secondary close" data-dismiss="modal">Close</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
+    <script>
+        $(document).ready(function () {
+            $('#aboutUs').click(function () {
+                $('#AboutModal').modal('show')
+            });
+
+            $('#contactUs').click(function () {
+                $('#AboutModal').modal('show')
+            });
+        });
+    </script>
 </body>
 </html>
