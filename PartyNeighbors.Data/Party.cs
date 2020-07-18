@@ -19,6 +19,7 @@ namespace PartyNeighbors.Data
         
         [Required]
         [Display(Name = "Kickoff Time")]
+        [DisplayFormat(DataFormatString = "{0:dd/MMM/yyyy HH:mm}")]
         public DateTimeOffset PartyTime { get; set; }
         
         [Required]
