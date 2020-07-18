@@ -197,6 +197,24 @@ textarea {
     font-family: 'Rock Salt', cursive;
 }
 
+.contact {
+    position: relative;
+    display: flex;
+    margin: 1rem .5rem;
+    font-weight: bold;
+}
+
+.contact .control-label {
+    padding: .5rem;
+}
+
+.contactInfo {
+    border: thin solid gray;
+    border-radius: .5rem;
+    line-height: 3rem;
+    font-weight: normal;
+}
+
 .footer {
     color: white;
     display: flex;

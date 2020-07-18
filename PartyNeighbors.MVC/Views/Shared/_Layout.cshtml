@@ -25,7 +25,8 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     @*<li>@Html.ActionLink("About", "About", "Home")</li>*@
                     <li><a href="#" id="aboutUs">About Us</a></li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li><a href="#" id="contactUs">Contact Us</a></li>
+                    <li>@*@Html.ActionLink("Contact", "Contact", "Home")*@</li>
                     <li>@Html.ActionLink("Residents", "Index", "Residents")</li>
                     <li>@Html.ActionLink("Locations", "Index", "Locations")</li>
                     @*<li>@Html.ActionLink("Party Items", "Index", "PartyItems")</li>*@
@@ -62,18 +63,22 @@
         </div>
     </div>
 
-    <div class="modal fade" id="AboutModal">
-        <div class="modal-dialog">
+    <div class="modal fade" id="ContactModal">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
                     <a href="#" class="close" data-dismiss="modal">&times;</a>
-                    <h4 class="modal-title">Get to Know Us!</h4>
+                    <h4 class="modal-title">Reach out to us!</h4>
                 </div>
                 <div class="modal-body">
-                      
-                    <text class=""></text>
-                    <text></text>
-                    <text></text>
+                    <div class="contact" id="phone">
+                        <div class="control-label col-md-2">Phone: </div>
+                        <div class="col-md-4 contactInfo">917-379-9137</div>
+                    </div>
+                    <div class="contact" id="email">
+                        <div class="control-label col-md-2">Email: </div>
+                        <div class="col-md-4 contactInfo">assistance@partyn.com</div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <div class="btn btn-secondary close" data-dismiss="modal">Close</div>
@@ -92,7 +97,7 @@
             });
 
             $('#contactUs').click(function () {
-                $('#AboutModal').modal('show')
+                $('#ContactModal').modal('show')
             });
         });
     </script>
