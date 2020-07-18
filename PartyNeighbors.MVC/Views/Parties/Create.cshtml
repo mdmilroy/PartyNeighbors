@@ -33,7 +33,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.NeighborhoodId, "Neighborhood", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("NeighborhoodId", null, "--Select Neighborhood--", htmlAttributes: new { @class = "form-control NeighborhoodId" })
+                @Html.DropDownList("NeighborhoodId", null, "--Select Neighborhood--", htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.NeighborhoodId, "", new { @class = "text-danger selected" })
             </div>
         </div>
@@ -41,7 +41,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.LocationId, "Location", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("LocationId", null, "--Select Location--", htmlAttributes: new { disabled = true, @class = "form-control LocationId" })
+                @Html.DropDownList("LocationId", null, "--Select Location--", htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.LocationId, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -74,6 +74,7 @@
     @Html.ActionLink("Back to List", "Index")
 </div>
 
+
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
     <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
@@ -91,13 +92,10 @@
                     controlType: 'select',
                     timeFormat: 'hh:mm TT'
                 })
-
-                $(".NeighborhoodId").on("click", () => {
-                    $(".LocationId").toggleClass("disabled");
-                })
             });
     </script>
 }
+
 <link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="~/Content/jquery-ui-timepicker-addon.min.css" rel="stylesheet" />
