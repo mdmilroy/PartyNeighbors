@@ -10,7 +10,6 @@ using PartyNeighbors.MVC.Models;
 
 namespace PartyNeighbors.MVC.Controllers
 {
-    [Authorize]
     public class ManageController : Controller
     {
         private ApplicationSignInManager _signInManager;

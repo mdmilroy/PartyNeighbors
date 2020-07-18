@@ -51,10 +51,10 @@ textarea {
 }
 
 .jumbotron .jb {
-    display: flex;
-    align-content: center;
-    justify-content: center;
+    display: block;
     font-family: 'Permanent Marker', cursive;
+    text-align: center;
+
 }
 
 .wrapper {
