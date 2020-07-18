@@ -14,6 +14,7 @@ using PartyNeighbors.Services;
 
 namespace PartyNeighbors.MVC.Controllers
 {
+    [Authorize]
     public class PartiesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

@@ -13,6 +13,7 @@ using PartyNeighbors.Services;
 
 namespace PartyNeighbors.MVC.Controllers
 {
+    [Authorize]
     public class ResidentsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
