@@ -35,13 +35,15 @@
             <div class="col-md-10">
                 @Html.DropDownList("NeighborhoodId", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.NeighborhoodId, "", new { @class = "text-danger" })
+                <div class="btn btn-default btn-sm" id="newNeighborhood" style="margin-top: 10px">
                     @Html.ActionLink("Neighborhood not listed?", "Create", "Neighborhoods")
+                </div>
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Create" class="btn btn-warning" />
             </div>
         </div>
     </div>
@@ -50,3 +52,31 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+
+
+<!--TODO find way to make this work within a modal or some sort of dynamic popup-->
+@*<div class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Header</h3>
+            </div>
+            <div class="modal-body">
+                <text></text>
+                <text></text>
+                <text></text>
+            </div>
+            <div class="modal-footer">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#newNeighborhood').click(function () {
+            $('.modal').show()
+        });
+    });
+</script>*@

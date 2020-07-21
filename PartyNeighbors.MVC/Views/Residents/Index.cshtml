@@ -31,9 +31,9 @@
                 @Html.DisplayFor(modelItem => item.Neighborhood.Name)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ResidentId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ResidentId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ResidentId })
+                <span class="badge badge-pill badge-warning" id="edit">@Html.ActionLink("Edit", "Edit", new { id = item.ResidentId })</span>
+                <span class="badge badge-pill badge-warning" id="details">@Html.ActionLink("Details", "Details", new { id = item.ResidentId })</span>
+                <span class="badge badge-pill badge-warning" id="delete">@Html.ActionLink("Delete", "Delete", new { id = item.ResidentId })</span>
             </td>
         </tr>
     }

@@ -51,7 +51,7 @@ namespace PartyNeighbors.Services
                 Category = p.Category.Name,
                 Capacity = p.Capacity
             });
-            return query.ToArray();
+            return query.ToList();
         }
 
         public PartyDetail GetPartyById(int id)

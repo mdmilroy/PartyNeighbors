@@ -25,8 +25,10 @@ namespace PartyNeighbors.MVC.Controllers
         // GET: Parties
         public ActionResult Index()
         {
-            var parties = db.Parties;
-            return View(parties.ToList());
+            _userId = Guid.Parse(User.Identity.GetUserId());
+            _partyService = new PartyService(_userId);
+            var parties = _partyService.GetParties();
+            return View(parties);
         }
 
         // GET: Parties/Details/5
@@ -86,7 +88,7 @@ namespace PartyNeighbors.MVC.Controllers
             ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "Name", party.CategoryId);
             ViewBag.NeighborhoodId = new SelectList(db.Neighborhoods, "NeighborhoodId", "Name", party.NeighborhoodId);
             ViewBag.LocationId = new SelectList(db.Locations, "LocationId", "Name", party.LocationId);
-            return View(party);
+            return View();
         }
 
         // GET: Parties/Edit/5

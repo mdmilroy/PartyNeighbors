@@ -72,6 +72,10 @@
     <Compile Include="Migrations\202007181407095_changing datetime.designer.cs">
       <DependentUpon>202007181407095_changing datetime.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202007210208485_fixDateBug.cs" />
+    <Compile Include="Migrations\202007210208485_fixDateBug.designer.cs">
+      <DependentUpon>202007210208485_fixDateBug.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Neighborhood.cs" />
     <Compile Include="Party.cs" />
@@ -93,6 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202007181407095_changing datetime.resx">
       <DependentUpon>202007181407095_changing datetime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007210208485_fixDateBug.resx">
+      <DependentUpon>202007210208485_fixDateBug.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

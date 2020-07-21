@@ -46,9 +46,9 @@
                 </td>
                 <td class="userLinks">
                     @Html.ActionLink("Locations", "AddLocations", new { id = item.NeighborhoodId }) |
-                    @Html.ActionLink("Edit", "Edit", new { id = item.NeighborhoodId }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.NeighborhoodId }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.NeighborhoodId })
+                    <span class="badge badge-pill badge-warning" id="edit">@Html.ActionLink("Edit", "Edit", new { id = item.NeighborhoodId })</span>
+                    <span class="badge badge-pill badge-warning" id="details">@Html.ActionLink("Details", "Details", new { id = item.NeighborhoodId })</span>
+                    <span class="badge badge-pill badge-warning" id="delete">@Html.ActionLink("Delete", "Delete", new { id = item.NeighborhoodId })</span>
                     @*@Html.ActionLink("Residents", "Index", "Residents", new { id = item.NeighborhoodId }) |*@
                 </td>
             </tr>
