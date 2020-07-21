@@ -25,8 +25,10 @@ namespace PartyNeighbors.MVC.Controllers
         // GET: Parties
         public ActionResult Index()
         {
-            var parties = db.Parties;
-            return View(parties.ToList());
+            _userId = Guid.Parse(User.Identity.GetUserId());
+            _partyService = new PartyService(_userId);
+            var parties = _partyService.GetParties();
+            return View(parties);
         }
 
         // GET: Parties/Details/5

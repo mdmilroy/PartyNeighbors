@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<PartyNeighbors.Data.Party>
 
 @{
-    ViewBag.Title = "List of Party";
+    ViewBag.Title = "Party Lineup";
 }
 
 <h2>@ViewBag.Title</h2>
@@ -9,6 +9,8 @@
 <button class="btn btn-default " role="button">@Html.ActionLink("Create New", "Create") &raquo;</button>
 <br />
 <br />
+
+@{ var ctx = new PartyNeighbors.Data.ApplicationDbContext(); }
 
 <table class="table">
     <tr>
@@ -22,15 +24,20 @@
             @Html.DisplayNameFor(model => model.PartyTime)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.HostId)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Category)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Capacity)
         </th>
+        <th></th>
     </tr>
 
     @foreach (var item in Model)
     {
+        var host = ctx.Residents.Single(r => r.ResidentId == item.HostId);
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.PartyName)
@@ -41,6 +48,9 @@
             @{ string partytime = item.PartyTime.ToString("MMM dd, yyyy hh:mm tt");}
             <td>
                 @Html.DisplayFor(modelItem => partytime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => host.FullName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Category.Name)
