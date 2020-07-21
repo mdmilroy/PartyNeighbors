@@ -9,10 +9,10 @@ namespace PartyNeighbors.Contracts
 {
     public interface IPartyService
     {
-        bool CreateParty(PartyCreate neighborhoodToCreate);
+        bool CreateParty(PartyCreate partyToCreate);
         IEnumerable<PartyListItem> GetParties();
         PartyDetail GetPartyById(int id);
-        bool EditParty(PartyEdit neighborhoodToEdit);
+        bool EditParty(PartyEdit partyToEdit);
         bool DeleteParty(int id);
     }
 }

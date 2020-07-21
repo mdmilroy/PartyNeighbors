@@ -72,6 +72,22 @@ textarea {
     margin: auto;
 }
 
+#edit {
+    background-color: darkorange;
+}
+
+#details {
+    background-color: steelblue;
+}
+
+#delete {
+    background-color: red;
+}
+
+.badge a {
+    color: white;
+}
+
 .mainContent {
     display: flex;
     width: 100%;
@@ -94,6 +110,9 @@ textarea {
 
 .card {
     text-align: center;
+    border: thin solid #DE6500;
+    border-radius: 10px;
+    padding: 5px;
 }
 
 .mapOuter {

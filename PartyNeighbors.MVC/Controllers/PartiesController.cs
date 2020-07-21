@@ -86,7 +86,7 @@ namespace PartyNeighbors.MVC.Controllers
             ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "Name", party.CategoryId);
             ViewBag.NeighborhoodId = new SelectList(db.Neighborhoods, "NeighborhoodId", "Name", party.NeighborhoodId);
             ViewBag.LocationId = new SelectList(db.Locations, "LocationId", "Name", party.LocationId);
-            return View(party);
+            return View();
         }
 
         // GET: Parties/Edit/5

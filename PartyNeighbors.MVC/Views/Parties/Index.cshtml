@@ -49,9 +49,9 @@
                 @Html.DisplayFor(modelItem => item.Capacity)
             </td>
             <td>
-                <span>@Html.ActionLink("Edit", "Edit", new { id = item.PartyId })</span> |
-                <span>@Html.ActionLink("Details", "Details", new { id = item.PartyId })</span> |
-                <span>@Html.ActionLink("Delete", "Delete", new { id = item.PartyId })</span>
+                <span class="badge badge-pill badge-warning" id="edit">@Html.ActionLink("Edit", "Edit", new { id = item.PartyId })</span>
+                <span class="badge badge-pill badge-warning" id="details">@Html.ActionLink("Details", "Details", new { id = item.PartyId })</span>
+                <span class="badge badge-pill badge-warning" id="delete">@Html.ActionLink("Delete", "Delete", new { id = item.PartyId })</span>
             </td>
         </tr>
     }
