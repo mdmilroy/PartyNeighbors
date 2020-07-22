@@ -65,7 +65,6 @@ textarea {
     height: auto;
     width: 100%;
     position: relative;
-
     display: flex;
     padding: 0 0 5rem 0;
     align-content: center;
@@ -74,6 +73,10 @@ textarea {
 
 .img-responsive {
     margin: auto;
+}
+
+.backToList {
+    font-family: 'Rock Salt', cursive;
 }
 
 #edit {
