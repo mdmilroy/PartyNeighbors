@@ -46,6 +46,7 @@ namespace PartyNeighbors.Services
                 Id = p.PartyId,
                 Name = p.PartyName,
                 Neighborhood = p.Neighborhood.Name,
+                Location = p.Location.Name,
                 PartyTime = p.PartyTime,
                 Host = host.FullName,
                 Category = p.Category.Name,
