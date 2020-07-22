@@ -65,7 +65,6 @@ textarea {
     height: auto;
     width: 100%;
     position: relative;
-
     display: flex;
     padding: 0 0 5rem 0;
     align-content: center;
@@ -75,6 +74,37 @@ textarea {
 .img-responsive {
     margin: auto;
 }
+
+/*.indexBtn {
+    font-family: 'Rock Salt', cursive;
+    background-color: #DE6500;
+}
+
+.indexBtn a:hover {
+    text-decoration: none;
+}
+
+.indexBtn a {
+    color: white;
+}*/
+
+.btn {
+    background-color: #DE6500;
+    color: white;
+    font-family: 'Rock Salt', cursive;
+}
+    .btn:hover {
+        background-color: #DE6500;
+        color: white;
+    }
+
+.btn a {
+    color: white;
+}
+
+    .btn a:hover {
+        text-decoration: none;
+    }
 
 #edit {
     background-color: #DE6500;

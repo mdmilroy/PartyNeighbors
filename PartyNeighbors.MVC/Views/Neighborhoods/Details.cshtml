@@ -45,6 +45,10 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.NeighborhoodId }) |
-    @Html.ActionLink("Back to List", "Index")
+    <button class="btn btn-sm indexBtn">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.NeighborhoodId })
+    </button> |
+    <button class="btn btn-sm indexBtn">
+        @Html.ActionLink("Back to List", "Index")
+    </button>
 </p>
