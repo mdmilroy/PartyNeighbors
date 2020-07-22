@@ -21,6 +21,9 @@
             @Html.DisplayNameFor(model => model.Neighborhood)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.Location)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.PartyTime)
         </th>
         <th>
@@ -44,6 +47,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Neighborhood.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location.Name)
             </td>
             @{ string partytime = item.PartyTime.ToString("MMM dd, yyyy hh:mm tt");}
             <td>
