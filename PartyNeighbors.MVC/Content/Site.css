@@ -11,6 +11,7 @@
 body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: #CDD5EB;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -47,14 +48,13 @@ textarea {
 
 .jumbotron {
     background-image: linear-gradient(to top left, yellow, #DE6500, #DE6500 );
-    
+    border-radius: 0 0 8px 8px !important;
 }
 
 .jumbotron .jb {
     display: block;
     font-family: 'Permanent Marker', cursive;
     text-align: center;
-
 }
 
 .wrapper {
@@ -113,6 +113,19 @@ textarea {
     border: thin solid #DE6500;
     border-radius: 10px;
     padding: 5px;
+}
+
+.card-body p {
+    padding: 10px;
+}
+
+.controllerBtn {
+    background-color: transparent;
+    border: none;
+}
+
+.controllerBtn a {
+    color: #132898;
 }
 
 .mapOuter {

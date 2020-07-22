@@ -1,16 +1,16 @@
 ﻿@model IEnumerable<PartyNeighbors.Data.Resident>
 
 @{
-    ViewBag.Title = "List of Residents";
+    ViewBag.Title = "Resident Directory";
 }
 
 <h2>@ViewBag.Title</h2>
 
-<button class="btn btn-default " role="button">@Html.ActionLink("Create New", "Create") &raquo;</button>
+@Html.ActionLink("Create New", "Create", null, new { style = "background-color: #DE6500; color:white;", @class = "btn btn-default btn-large" })
 <br />
 <br />
 
-<p>Type something in the input field to search the table:</p>
+
 <input class="form-control" id="myInput" type="text" placeholder="Search..">
 <br>
 <table class="table table-hover" id="myTable">

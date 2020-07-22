@@ -13,7 +13,7 @@ namespace PartyNeighbors.Data
         [Display(Name = "Id")]
         public int LocationId { get; set; }
         [Required]
-        [Display(Name = "Part of Neighborhood")]
+        [Display(Name = "Venue")]
         public string Name { get; set; } // e.g. community center, pool, park, etc.
 
         public ICollection<Neighborhood> Neighborhoods { get; set; }

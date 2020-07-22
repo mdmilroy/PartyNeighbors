@@ -35,9 +35,11 @@
             <div class="col-md-10">
                 @Html.DropDownList("NeighborhoodId", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.NeighborhoodId, "", new { @class = "text-danger" })
-                <div class="btn btn-default btn-sm" id="newNeighborhood" style="margin-top: 10px">
+
+                <!-- TODO add dynamic addition of unlisted neighborhood to a modal here-->
+                @*<div class="btn btn-default btn-sm" id="newNeighborhood" style="margin-top: 10px">
                     Neighborhood not listed?
-                </div>
+                </div>*@
             </div>
         </div>
 
