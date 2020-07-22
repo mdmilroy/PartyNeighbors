@@ -35,9 +35,11 @@
             <div class="col-md-10">
                 @Html.DropDownList("NeighborhoodId", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.NeighborhoodId, "", new { @class = "text-danger" })
-                <div class="btn btn-default btn-sm" id="newNeighborhood" style="margin-top: 10px">
-                    @Html.ActionLink("Neighborhood not listed?", "Create", "Neighborhoods")
-                </div>
+
+                <!-- TODO add dynamic addition of unlisted neighborhood to a modal here-->
+                @*<div class="btn btn-default btn-sm" id="newNeighborhood" style="margin-top: 10px">
+                    Neighborhood not listed?
+                </div>*@
             </div>
         </div>
 
@@ -55,28 +57,32 @@
 
 
 <!--TODO find way to make this work within a modal or some sort of dynamic popup-->
-@*<div class="modal">
+
+ @*Modal 
+<div id="modal" class="modal fade" role="dialog">
     <div class="modal-dialog">
+
+         Modal content
         <div class="modal-content">
             <div class="modal-header">
-                <h3>Header</h3>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
             </div>
             <div class="modal-body">
-                <text></text>
-                <text></text>
-                <text></text>
+                <iframe src="~/Views/Neighborhoods/Create.cshtml"></iframe>
             </div>
             <div class="modal-footer">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
+
     </div>
 </div>
 
 <script type="text/javascript">
     $(document).ready(function () {
         $('#newNeighborhood').click(function () {
-            $('.modal').show()
+            $('#newNeighborhood').modal('show');
         });
     });
 </script>*@
