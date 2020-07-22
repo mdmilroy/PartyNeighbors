@@ -7,7 +7,17 @@
 
         <ul class="nav navbar-nav navbar-right">
             <li>
-                @Html.ActionLink("Hello " + User.Identity.Name.ToString() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+                @{ var ctx = new PartyNeighbors.Data.ApplicationDbContext();
+                   var resident = ctx.Residents.Find(User.Identity.GetUserId()); }
+                @if (resident != null)
+                {
+                    @Html.ActionLink("Hello " + resident.FirstName + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+
+                }
+                else
+                {
+                    @Html.ActionLink("Hello " + User.Identity.Name.ToString() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+                }
             </li>
             <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
         </ul>
