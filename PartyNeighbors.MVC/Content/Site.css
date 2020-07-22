@@ -41,6 +41,10 @@ textarea {
     justify-content: center;
 }
 
+.btn-warning {
+    background-color: #DE6500;
+}
+
 .navbar-brand {
     font-family: 'Rock Salt', cursive;
     color: #DE6500 !important;
@@ -73,7 +77,7 @@ textarea {
 }
 
 #edit {
-    background-color: darkorange;
+    background-color: #DE6500;
 }
 
 #details {
