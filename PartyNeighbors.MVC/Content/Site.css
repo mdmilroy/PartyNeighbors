@@ -75,8 +75,17 @@ textarea {
     margin: auto;
 }
 
-.backToList {
+.indexBtn {
     font-family: 'Rock Salt', cursive;
+    background-color: #DE6500;
+}
+
+.indexBtn a:hover {
+    text-decoration: none;
+}
+
+.indexBtn a {
+    color: white;
 }
 
 #edit {
