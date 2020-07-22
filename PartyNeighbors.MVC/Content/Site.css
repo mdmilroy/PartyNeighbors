@@ -75,7 +75,7 @@ textarea {
     margin: auto;
 }
 
-.indexBtn {
+/*.indexBtn {
     font-family: 'Rock Salt', cursive;
     background-color: #DE6500;
 }
@@ -86,7 +86,25 @@ textarea {
 
 .indexBtn a {
     color: white;
+}*/
+
+.btn {
+    background-color: #DE6500;
+    color: white;
+    font-family: 'Rock Salt', cursive;
 }
+    .btn:hover {
+        background-color: #DE6500;
+        color: white;
+    }
+
+.btn a {
+    color: white;
+}
+
+    .btn a:hover {
+        text-decoration: none;
+    }
 
 #edit {
     background-color: #DE6500;
