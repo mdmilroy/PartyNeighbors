@@ -10,7 +10,7 @@
 <br>
 <br>
 
-@{ var ctx = new PartyNeighbors.Data.ApplicationDbContext(); }
+@{ var ctx = new PartyNeighbors.Data.ApplicationDbContext();}
 
 
 <input class="form-control col-lg-6" id="myInput" type="text" placeholder="Search..">
@@ -31,6 +31,7 @@
                 </div>
 
                 <div class="cardInfo">
+                    @Html.HiddenFor(modelItem => item.PartyId)
                     <h5>@Html.DisplayFor(modelItem => item.Neighborhood.Name)</h5>
                     <p><strong>@Html.DisplayNameFor(model => model.Location.Name):</strong> @Html.DisplayFor(modelItem => item.Location.Name)</p>
                     @{ string partytime = item.PartyTime.ToString("MMM dd, yyyy hh:mm tt");}
@@ -41,14 +42,12 @@
                 </div>
             </div>
             <div class="card-footer" id="indexItem">
-                <span class="badge badge-pill badge-warning" id="RSVP"></span>
                 <span class="badge badge-pill badge-warning" id="edit">@Html.ActionLink("Edit", "Edit", new { id = item.PartyId })</span>
                 <span class="badge badge-pill badge-warning" id="details">@Html.ActionLink("Details", "Details", new { id = item.PartyId })</span>
                 <span class="badge badge-pill badge-warning" id="delete">@Html.ActionLink("Delete", "Delete", new { id = item.PartyId })</span>
             </div>
         </div>
     }
-</div>
 
 <script>
     $(document).ready(function () {
@@ -60,3 +59,5 @@
         });
     });
 </script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/jquery-3.5.1.min.js"></script>

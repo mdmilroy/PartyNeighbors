@@ -149,9 +149,13 @@ textarea {
     padding: 5px;
 }
 
-.card-body p {
-    padding: 10px;
+.card-body {
+    height: 100%;
 }
+
+    .card-body p {
+        padding: 10px;
+    }
 
 .controllerBtn {
     background-color: transparent;
@@ -312,6 +316,7 @@ textarea {
     #partyCountdown {
         border: thick black solid;
         border-radius: 8px;
+        height: 45%;
     }
 
 }

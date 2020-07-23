@@ -111,15 +111,15 @@
                 $('.guests').toggle()
             });
 
-            $('#RSVP').on('click', event => {
+            @*$('#RSVP').on('click', event => {
                 @addRSVP(Model.PartyId);
                 $(event.currentTarget).hide();
-            });
+            });*@
         });
     </script>
 }
 
-@using System.Linq;
+@*@using System.Linq;
 @using Microsoft.AspNet.Identity;
 @using PartyNeighbors.Data;
 @{
@@ -142,4 +142,4 @@
             return ctx.SaveChanges() == 1;
         };
     }
-}
+}*@
