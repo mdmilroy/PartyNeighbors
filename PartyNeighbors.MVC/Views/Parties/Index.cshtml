@@ -17,19 +17,20 @@
 <br>
 
 
-<div class="container-fluid card-deck col-lg-12 indexCardDeck" id="searchHere">
+<div class="container-fluid card-group col-lg-12 indexCardDeck" id="searchHere">
     @foreach (var item in Model)
     {
         var host = ctx.Residents.SingleOrDefault(r => r.ResidentId == item.HostId);
         <div class="card indexItem">
             <div class="card-body">
-                <div id="partyCountdown">
+                <div class="partyName">
                     <h1 class="card-title">@Html.DisplayFor(modelItem => item.PartyName)</h1>
                     @{TimeSpan countdown = item.PartyTime - DateTime.UtcNow; }
+                </div>
+                <div class="partyCountdown">
                     <h5>kicks off in: </h5>
                     <h3 style="color: #DE6500;">@countdown.Days day(s)!</h3>
                 </div>
-
                 <div class="cardInfo">
                     @Html.HiddenFor(modelItem => item.PartyId)
                     <h5>@Html.DisplayFor(modelItem => item.Neighborhood.Name)</h5>
@@ -48,6 +49,7 @@
             </div>
         </div>
     }
+</div>
 
 <script>
     $(document).ready(function () {

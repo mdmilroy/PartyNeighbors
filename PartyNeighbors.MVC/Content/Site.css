@@ -75,18 +75,19 @@ textarea {
     margin: auto;
 }
 
-/*.indexBtn {
+.detailsBtn {
     font-family: 'Rock Salt', cursive;
-    background-color: #DE6500;
+    background-color: #101010 !important;
+    margin: 1rem;
 }
 
-.indexBtn a:hover {
-    text-decoration: none;
-}
+    .detailsBtn a:hover {
+        text-decoration: none;
+    }
 
-.indexBtn a {
-    color: white;
-}*/
+    .detailsBtn a {
+        color: white;
+    }
 
 .btn {
     background-color: #DE6500;
@@ -122,6 +123,10 @@ textarea {
     color: white;
 }
 
+.guests {
+    margin-bottom: 10rem;
+}
+
 .mainContent {
     display: flex;
     width: 100%;
@@ -144,7 +149,7 @@ textarea {
 
 .card {
     text-align: center;
-    border: thin solid #DE6500;
+    border: thick solid #DE6500;
     border-radius: 10px;
     padding: 5px;
 }
@@ -313,13 +318,9 @@ textarea {
         padding: 1px;
     }
 
-    #partyCountdown {
-        border: thick black solid;
-        border-radius: 8px;
-        height: 45%;
-    }
-
 }
+
+
 
 @media (max-width: 514px) {
 
@@ -363,11 +364,20 @@ textarea {
             margin: 5px;
             padding: 1px;
         }
+}
 
-    #partyCountdown {
-        border: thick black solid;
-        border-radius: 8px;
-    }
+.partyName {
+    height: 8rem;
+    align-content: center;
+    justify-content: center;
+}
+
+.partyCountdown {
+    border: thick black solid;
+    border-radius: 8px;
+    height: 25%;
+    align-content: center;
+    justify-content: center;
 }
 
 .contact {
