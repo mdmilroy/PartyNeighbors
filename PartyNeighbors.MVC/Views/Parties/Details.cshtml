@@ -78,15 +78,15 @@
                 $('.guests').toggle()
             });
 
-            @*$('#RSVP').on('click', event => {
+            $('#RSVP').on('click', event => {
                 @addRSVP(Model.PartyId);
                 $(event.currentTarget).hide();
-            });*@
+            });
         });
     </script>
 }
 
-@*@using System.Linq;
+@using System.Linq;
     @using Microsoft.AspNet.Identity;
     @using PartyNeighbors.Data;
     @{
@@ -94,19 +94,16 @@
         Party currentParty = db.Parties.Find(Model.PartyId);
         bool addRSVP(int partyId)
         {
-            using (var ctx = new ApplicationDbContext())
+            var user = ctx.Residents.Find(User.Identity.GetUserId());
+            var party = ctx.Parties.Single(p => p.PartyId == partyId);
+            if (party.Residents.Count() < party.Capacity)
             {
-                var user = ctx.Residents.Find(User.Identity.GetUserId());
-                var party = ctx.Parties.Single(p => p.PartyId == partyId);
-                if (party.Residents.Count() < party.Capacity)
-                {
-                    party.Residents.Add(user);
-                }
-                else
-                {
-                    Console.WriteLine("Sorry, this party is at max capacity. Please find another party to join.");
-                }
-                return ctx.SaveChanges() == 1;
-            };
+                party.Residents.Add(user);
+            }
+            else
+            {
+                Console.WriteLine("Sorry, this party is at max capacity. Please find another party to join.");
+            }
+            return ctx.SaveChanges() == 1;
         }
-    }*@
+    }
