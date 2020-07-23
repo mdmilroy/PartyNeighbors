@@ -265,7 +265,7 @@ textarea {
 
 @media (min-width: 515px) {
 
-    #indexCardDeck {
+    .indexCardDeck {
         display: flex;
         position: relative;
         flex-direction: row;
@@ -274,7 +274,7 @@ textarea {
         margin: 5rem auto;
     }
 
-    #indexItem {
+    .indexItem {
         display: flex;
         align-content: center;
         justify-content: center;
@@ -296,7 +296,7 @@ textarea {
 
 @media (max-width: 514px) {
 
-    #indexCardDeck {
+    .indexCardDeck {
         display: flex;
         position: relative;
         flex-direction: column;
@@ -305,7 +305,7 @@ textarea {
         margin: 5rem auto;
     }
 
-    #indexItem {
+    .indexItem {
         display: flex;
         align-content: center;
         justify-content: center;

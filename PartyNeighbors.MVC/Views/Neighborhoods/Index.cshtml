@@ -18,10 +18,10 @@
 <br>
 
 
-    <div class="container-fluid card-deck col-lg-10" id="indexCardDeck">
+    <div class="container-fluid card-deck col-lg-10 indexCardDeck" id="searchHere">
         @foreach (var item in Model)
         {
-            <div class="card col-lg-4" id="indexItem">
+            <div class="card col-lg-4 indexItem">
                 <img src="..." class="card-img-top" alt="...">
                 <div class="card-body">
                     <h3 class="card-title">@Html.DisplayFor(modelItem => item.Name)</h3>
@@ -44,7 +44,7 @@
     $(document).ready(function () {
         $("#myInput").on("keyup", function () {
             var value = $(this).val().toLowerCase();
-            $("#myTable tr").filter(function () {
+            $("#searchHere .indexItem").filter(function () {
                 $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
             });
         });
