@@ -280,11 +280,22 @@ textarea {
         justify-content: center;
         flex-direction: column;
         margin: 1rem;
+        width: 30%;
+        overflow: hidden;
+        background-position: center;
     }
 
-    #indexItem .badge {
-        margin: .5rem;
-    }
+        .indexItem .badge {
+            margin: .5rem;
+        }
+
+        .indexItem img {
+            height: 200px;
+            width: 200px;
+            position: relative;
+            margin: auto;
+        }
+
 
     .cardInfo {
         display: flex;
@@ -313,8 +324,15 @@ textarea {
         margin: 1rem;
     }
 
-        #indexItem .badge {
+        .indexItem .badge {
             margin: .5rem;
+        }
+
+        .indexItem img {
+            height: 200px;
+            width: 200px;
+            position: relative;
+            margin: auto;
         }
 
     .cardInfo {

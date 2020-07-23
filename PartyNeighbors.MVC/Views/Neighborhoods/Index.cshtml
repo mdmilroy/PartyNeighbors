@@ -18,12 +18,14 @@
 <br>
 
 
-    <div class="container-fluid card-deck col-lg-10 indexCardDeck" id="searchHere">
+    <div class="container-fluid card-deck col-lg-12 indexCardDeck" id="searchHere">
         @foreach (var item in Model)
         {
-            <div class="card col-lg-4 indexItem">
-                <img src="~/Assets/" class="card-img-top" alt="...">
+            var itemImg = $"{@Html.DisplayFor(modelItem => item.Name).ToString()}.jfif";
+            <div class="card indexItem">
+                <img src="~/Assets/@itemImg" class="card-img-top" alt="...">
                 <div class="card-body">
+                    @*<h1>@itemImg</h1>*@
                     <h3 class="card-title">@Html.DisplayFor(modelItem => item.Name)</h3>
                     <div class="cardInfo">
                         <p>@Html.DisplayFor(modelItem => item.City), 
