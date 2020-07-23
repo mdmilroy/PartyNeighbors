@@ -62,7 +62,9 @@
 
 <p>
     <span><a id="guestsList">People Attending</a></span> |
-    <span><a id="RSVP">Join Us!</a></span> |
+    <button class="btn btn-sm indexBtn" id="RSVP">
+        Join Us!
+    </button> |
     <button class="btn btn-sm indexBtn">
         @Html.ActionLink("Edit", "Edit", new { id = Model.PartyId })
     </button> |
@@ -111,7 +113,6 @@
             $('#RSVP').on('click', event => {
                 @addRSVP(Model.PartyId);
                 $(event.currentTarget).hide();
-                $('#remove').show();
             });
         });
     </script>
