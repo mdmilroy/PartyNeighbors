@@ -17,7 +17,7 @@
             </div>
             <div class="cardInfo">
                 @Html.HiddenFor(model => model.PartyId)
-                <h5>@Html.DisplayFor(model => model.Neighborhood.Name)</h5>
+                <h5>at the @Html.DisplayFor(model => model.Neighborhood.Name) Neighborhood</h5>
                 <p><strong>@Html.DisplayNameFor(model => model.Location.Name):</strong> @Html.DisplayFor(model => model.Location.Name)</p>
                 @{ string partytime = Model.PartyTime.ToString("MMM dd, yyyy hh:mm tt");}
                 <p><strong>@Html.DisplayNameFor(model => model.PartyTime):</strong> @Html.DisplayFor(modelItem => partytime)</p>
@@ -26,17 +26,15 @@
                 <p><strong>@Html.DisplayNameFor(model => model.Capacity):</strong> @Html.DisplayFor(model => model.Capacity)</p>
             </div>
         </div>
-        <div class="card-footer" id="detailsItem">
-            <span class="badge badge-pill badge-warning" id="edit">@Html.ActionLink("Edit", "Edit", new { id = Model.PartyId })</span>
-            <span class="badge badge-pill badge-warning" id="delete">@Html.ActionLink("Delete", "Delete", new { id = Model.PartyId })</span>
-        </div>
-            <button class="btn btn-sm detailsBtn" id="RSVP">
-                Join Us!
-            </button>
-            <button class="btn btn-sm detailsBtn">
-                @Html.ActionLink("Back to List", "Index")
-            </button>
+        <div class="card-footer partyDetailsBtns" id="detailsItem">
+            <div>
+                <button class="btn btn-sm detailsBtn" style="display: inline; width: 42.5%;" id="edit">@Html.ActionLink("Edit", "Edit", new { id = Model.PartyId })</button>
+                <button class="btn btn-sm btn-danger detailsBtn" style="display: inline; width: 42.5%;" id="delete">@Html.ActionLink("Delete", "Delete", new { id = Model.PartyId })</button>
+            </div>
+                <button class="btn btn-sm detailsBtn" id="RSVP">Join Us!</button>
+            <button class="btn btn-sm detailsBtn">@Html.ActionLink("Back to List", "Index")</button>
             <a class="btn btn-sm detailsBtn" id="guestsList">People Attending</a>
+        </div>
     </div>
 </div>
 

@@ -116,7 +116,7 @@ textarea {
 }
 
 #delete {
-    background-color: red;
+    background-color: red !important;
 }
 
 .badge a {
@@ -126,6 +126,19 @@ textarea {
 .guests {
     margin-bottom: 10rem;
 }
+
+.partyDetailsBtns {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+}
+
+    .partyDetailsBtns .btn {
+        display: inline-flex;
+        align-content: center;
+        justify-content: center;
+    }
 
 .mainContent {
     display: flex;
