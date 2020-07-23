@@ -75,18 +75,19 @@ textarea {
     margin: auto;
 }
 
-/*.indexBtn {
+.detailsBtn {
     font-family: 'Rock Salt', cursive;
-    background-color: #DE6500;
+    background-color: #101010 !important;
+    margin: 1rem;
 }
 
-.indexBtn a:hover {
-    text-decoration: none;
-}
+    .detailsBtn a:hover {
+        text-decoration: none;
+    }
 
-.indexBtn a {
-    color: white;
-}*/
+    .detailsBtn a {
+        color: white;
+    }
 
 .btn {
     background-color: #DE6500;
@@ -115,12 +116,29 @@ textarea {
 }
 
 #delete {
-    background-color: red;
+    background-color: red !important;
 }
 
 .badge a {
     color: white;
 }
+
+.guests {
+    margin-bottom: 10rem;
+}
+
+.partyDetailsBtns {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+}
+
+    .partyDetailsBtns .btn {
+        display: inline-flex;
+        align-content: center;
+        justify-content: center;
+    }
 
 .mainContent {
     display: flex;
@@ -144,14 +162,18 @@ textarea {
 
 .card {
     text-align: center;
-    border: thin solid #DE6500;
+    border: thick solid #DE6500;
     border-radius: 10px;
     padding: 5px;
 }
 
-.card-body p {
-    padding: 10px;
+.card-body {
+    height: 100%;
 }
+
+    .card-body p {
+        padding: 10px;
+    }
 
 .controllerBtn {
     background-color: transparent;
@@ -261,6 +283,116 @@ textarea {
     align-content: center;
     justify-content: center;
     font-family: 'Rock Salt', cursive;
+}
+
+@media (min-width: 515px) {
+
+    .indexCardDeck {
+        display: flex;
+        position: relative;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+        margin: 5rem auto;
+    }
+
+    .indexItem {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        flex-direction: column;
+        margin: 1rem;
+        width: 30%;
+        overflow: hidden;
+        background-position: center;
+    }
+
+        .indexItem .badge {
+            margin: .5rem;
+            padding: 10px;
+        }
+
+        .indexItem img {
+            height: 200px;
+            width: 200px;
+            position: relative;
+            margin: auto;
+        }
+
+
+    .cardInfo {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .cardInfo p {
+        margin: 5px;
+        padding: 1px;
+    }
+
+}
+
+
+
+@media (max-width: 514px) {
+
+    .indexCardDeck {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        margin: 5rem auto;
+    }
+
+    .indexItem {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        flex-direction: column;
+        margin: 1rem;
+    }
+
+        .indexItem .badge {
+            margin: .5rem;
+        }
+
+        .indexItem img {
+            height: 200px;
+            width: 200px;
+            position: relative;
+            margin: auto;
+        }
+
+    .cardInfo {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+        .cardInfo p {
+            display: flex;
+            margin: 5px;
+            padding: 1px;
+        }
+}
+
+.partyName {
+    height: 8rem;
+    align-content: center;
+    justify-content: center;
+}
+
+.partyCountdown {
+    border: thick black solid;
+    border-radius: 8px;
+    height: 25%;
+    align-content: center;
+    justify-content: center;
 }
 
 .contact {

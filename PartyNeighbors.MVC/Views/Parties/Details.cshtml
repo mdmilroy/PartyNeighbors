@@ -6,71 +6,38 @@
 
 <h2>@ViewBag.Title</h2>
 
-<div>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.PartyName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PartyName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PartyTime)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PartyTime)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Neighborhood.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Neighborhood.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Location.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Location.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Category.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Category.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Capacity)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Capacity)
-        </dd>
-
-    </dl>
+@{ var ctx = new PartyNeighbors.Data.ApplicationDbContext();
+   var host = ctx.Residents.SingleOrDefault(r => r.ResidentId == Model.HostId);
+}
+<div class="container-fluid card-group col-lg-12 indexCardDeck" id="searchHere">
+    <div class="card indexItem">
+        <div class="card-body">
+            <div class="partyName">
+                <h1 class="card-title">@Html.DisplayFor(model => model.PartyName)</h1>
+            </div>
+            <div class="cardInfo">
+                @Html.HiddenFor(model => model.PartyId)
+                <h5>at the @Html.DisplayFor(model => model.Neighborhood.Name) Neighborhood</h5>
+                <p><strong>@Html.DisplayNameFor(model => model.Location.Name):</strong> @Html.DisplayFor(model => model.Location.Name)</p>
+                @{ string partytime = Model.PartyTime.ToString("MMM dd, yyyy hh:mm tt");}
+                <p><strong>@Html.DisplayNameFor(model => model.PartyTime):</strong> @Html.DisplayFor(modelItem => partytime)</p>
+                <p><strong>@Html.DisplayNameFor(model => model.HostId):</strong> @Html.DisplayFor(modelItem => host.FullName)</p>
+                <p><strong>@Html.DisplayNameFor(model => model.Category.Name):</strong> @Html.DisplayFor(model => model.Category.Name)</p>
+                <p><strong>@Html.DisplayNameFor(model => model.Capacity):</strong> @Html.DisplayFor(model => model.Capacity)</p>
+            </div>
+        </div>
+        <div class="card-footer partyDetailsBtns" id="detailsItem">
+            <div>
+                <button class="btn btn-sm detailsBtn" style="display: inline; width: 42.5%;" id="edit">@Html.ActionLink("Edit", "Edit", new { id = Model.PartyId })</button>
+                <button class="btn btn-sm btn-danger detailsBtn" style="display: inline; width: 42.5%;" id="delete">@Html.ActionLink("Delete", "Delete", new { id = Model.PartyId })</button>
+            </div>
+                <button class="btn btn-sm detailsBtn" id="RSVP">Join Us!</button>
+            <button class="btn btn-sm detailsBtn">@Html.ActionLink("Back to List", "Index")</button>
+            <a class="btn btn-sm detailsBtn" id="guestsList">People Attending</a>
+        </div>
+    </div>
 </div>
 
-<p>
-    <span><a id="guestsList">People Attending</a></span> |
-    <span><a id="RSVP">Join Us!</a></span> |
-    <span><a id="remove">Need to Cancel?</a></span> |
-    <button class="btn btn-sm indexBtn">
-        @Html.ActionLink("Edit", "Edit", new { id = Model.PartyId })
-    </button> |
-    <button class="btn btn-sm indexBtn">
-        @Html.ActionLink("Back to List", "Index")
-    </button>
-</p>
 
 <table class="table guests">
     <tr>
@@ -112,21 +79,18 @@
             $('#RSVP').on('click', event => {
                 @addRSVP(Model.PartyId);
                 $(event.currentTarget).hide();
-                $('#remove').show();
             });
         });
     </script>
 }
 
 @using System.Linq;
-@using Microsoft.AspNet.Identity;
-@using PartyNeighbors.Data;
-@{
-    ApplicationDbContext db = new ApplicationDbContext();
-    Party currentParty = db.Parties.Find(Model.PartyId);
-    bool addRSVP(int partyId)
-    {
-        using (var ctx = new ApplicationDbContext())
+    @using Microsoft.AspNet.Identity;
+    @using PartyNeighbors.Data;
+    @{
+        ApplicationDbContext db = new ApplicationDbContext();
+        Party currentParty = db.Parties.Find(Model.PartyId);
+        bool addRSVP(int partyId)
         {
             var user = ctx.Residents.Find(User.Identity.GetUserId());
             var party = ctx.Parties.Single(p => p.PartyId == partyId);
@@ -139,6 +103,5 @@
                 Console.WriteLine("Sorry, this party is at max capacity. Please find another party to join.");
             }
             return ctx.SaveChanges() == 1;
-        };
+        }
     }
-}

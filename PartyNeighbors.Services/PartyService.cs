@@ -93,5 +93,14 @@ namespace PartyNeighbors.Services
             _db.Parties.Remove(entity);
             return _db.SaveChanges() == 1;
         }
+
+        public bool RSVPUser(PartyRSVP userToAdd)
+        {
+            var party = _db.Parties.Single(n => n.PartyId == userToAdd.Id);
+            var user = _db.Residents.Single(n => n.ResidentId == userToAdd.GuestId);
+            party.Residents.Add(user);
+
+            return _db.SaveChanges() == 1;
+        }
     }
 }

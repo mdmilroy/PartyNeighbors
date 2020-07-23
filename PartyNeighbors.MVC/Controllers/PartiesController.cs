@@ -153,6 +153,22 @@ namespace PartyNeighbors.MVC.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult RSVP(int id)
+        {
+            Party party = db.Parties.Find(id);
+            if (party != null)
+            {
+                var guestId = User.Identity.GetUserId();
+                var guest = db.Residents.SingleOrDefault(r => r.ResidentId == guestId);
+                party.Residents.Add(guest);
+                return RedirectToAction("Index");
+            }
+
+            return View(party);
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
