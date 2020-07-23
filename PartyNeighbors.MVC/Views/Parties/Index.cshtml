@@ -23,7 +23,7 @@
         var host = ctx.Residents.SingleOrDefault(r => r.ResidentId == item.HostId);
         <div class="card indexItem">
             <div class="card-body">
-                <div class="partyName">
+                <div class="card-header partyName">
                     <h1 class="card-title">@Html.DisplayFor(modelItem => item.PartyName)</h1>
                     @{TimeSpan countdown = item.PartyTime - DateTime.UtcNow; }
                 </div>

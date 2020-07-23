@@ -291,6 +291,7 @@ textarea {
         display: flex;
         position: relative;
         flex-direction: row;
+        flex-wrap: wrap;
         align-content: center;
         justify-content: center;
         margin: 5rem auto;
@@ -309,6 +310,7 @@ textarea {
 
         .indexItem .badge {
             margin: .5rem;
+            padding: 10px;
         }
 
         .indexItem img {
