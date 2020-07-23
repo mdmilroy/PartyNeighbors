@@ -13,8 +13,10 @@
 @using Microsoft.AspNet.Identity
 @{ var signedIn = Request.IsAuthenticated; }
 
+
 <input class="form-control" id="myInput" type="text" placeholder="Search..">
 <br>
+
 <table class="table table-hover" id="myTable">
     <tr>
         <th>
@@ -52,12 +54,53 @@
                 <span class="badge badge-pill badge-warning" id="edit">@Html.ActionLink("Edit", "Edit", new { id = item.NeighborhoodId })</span>
                 <span class="badge badge-pill badge-warning" id="details">@Html.ActionLink("Details", "Details", new { id = item.NeighborhoodId })</span>
                 <span class="badge badge-pill badge-warning" id="delete">@Html.ActionLink("Delete", "Delete", new { id = item.NeighborhoodId })</span>
-                @*@Html.ActionLink("Residents", "Index", "Residents", new { id = item.NeighborhoodId }) |*@
+                @Html.ActionLink("Residents", "Index", "Residents", new { id = item.NeighborhoodId }) |
             </td>
         </tr>
     }
 
 </table>
+
+<div class="container-fluid">
+    <table class="table table-hover" id="myTable">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.State.StateName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ZipCode)
+            </th>
+            <th></th>
+        </tr>
+    </table>
+    <div class="container-fluid card-deck col-lg-10" id="indexCardDeck">
+        @foreach (var item in Model)
+        {
+            <div class="card col-lg-4" id="indexItem">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h3 class="card-title">@Html.DisplayFor(modelItem => item.Name)</h3>
+                    <div class="cardInfo">
+                        <p>@Html.DisplayFor(modelItem => item.City), 
+                           @Html.DisplayFor(modelItem => item.State.StateName)</p>
+                        <p>@Html.DisplayFor(modelItem => item.ZipCode)</p>
+                    </div>
+                </div>
+                <div class="card-footer" id="indexItem">
+                    <span class="badge badge-pill badge-warning" id="edit">@Html.ActionLink("Edit", "Edit", new { id = item.NeighborhoodId })</span>
+                    <span class="badge badge-pill badge-warning" id="details">@Html.ActionLink("Details", "Details", new { id = item.NeighborhoodId })</span>
+                    <span class="badge badge-pill badge-warning" id="delete">@Html.ActionLink("Delete", "Delete", new { id = item.NeighborhoodId })</span>
+                </div>
+            </div>
+        }
+    </div>
+</div>
 
 <script>
     $(document).ready(function () {

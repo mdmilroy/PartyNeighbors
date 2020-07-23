@@ -42,7 +42,7 @@
 
     @foreach (var item in Model)
     {
-        var host = ctx.Residents.Single(r => r.ResidentId == item.HostId);
+        var host = ctx.Residents.SingleOrDefault(r => r.ResidentId == item.HostId);
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.PartyName)
