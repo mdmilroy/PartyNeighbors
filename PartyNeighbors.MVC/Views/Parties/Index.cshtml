@@ -12,75 +12,48 @@
 
 @{ var ctx = new PartyNeighbors.Data.ApplicationDbContext(); }
 
-<input class="form-control" id="myInput" type="text" placeholder="Search..">
-<br>
-<table class="table table-hover" id="myTable">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.PartyName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Neighborhood)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Location)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PartyTime)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.HostId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Category)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Capacity)
-        </th>
-        <th></th>
-    </tr>
 
+<input class="form-control col-lg-6" id="myInput" type="text" placeholder="Search..">
+<br>
+
+
+<div class="container-fluid card-deck col-lg-12 indexCardDeck" id="searchHere">
     @foreach (var item in Model)
     {
         var host = ctx.Residents.SingleOrDefault(r => r.ResidentId == item.HostId);
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.PartyName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Neighborhood.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Location.Name)
-            </td>
-            @{ string partytime = item.PartyTime.ToString("MMM dd, yyyy hh:mm tt");}
-            <td>
-                @Html.DisplayFor(modelItem => partytime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => host.FullName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Category.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Capacity)
-            </td>
-            <td>
-                <span class="badge badge-pill badge-warning" id="edit">@Html.ActionLink("Edit", "Edit", new { id = item.PartyId })</span>
-                <span class="badge badge-pill badge-warning" id="details">@Html.ActionLink("Details", "Details", new { id = item.PartyId })</span>
-                <span class="badge badge-pill badge-warning" id="delete">@Html.ActionLink("Delete", "Delete", new { id = item.PartyId })</span>
-            </td>
-        </tr>
-    }
+        <div class="card indexItem">
+            <div class="card-body">
+                <div id="partyCountdown">
+                    <h1 class="card-title">@Html.DisplayFor(modelItem => item.PartyName)</h1>
+                    @{TimeSpan countdown = item.PartyTime - DateTime.UtcNow; }
+                    <h5>kicks off in: </h5>
+                    <h3 style="color: #DE6500;">@countdown.Days day(s)!</h3>
+                </div>
 
-</table>
+                <div class="cardInfo">
+                    <h5>@Html.DisplayFor(modelItem => item.Neighborhood.Name)</h5>
+                    <p><strong>@Html.DisplayNameFor(model => model.Location.Name):</strong> @Html.DisplayFor(modelItem => item.Location.Name)</p>
+                    @{ string partytime = item.PartyTime.ToString("MMM dd, yyyy hh:mm tt");}
+                    <p><strong>@Html.DisplayNameFor(model => model.PartyTime):</strong> @Html.DisplayFor(modelItem => partytime)</p>
+                    <p><strong>@Html.DisplayNameFor(model => model.HostId):</strong> @Html.DisplayFor(modelItem => host.FullName)</p>
+                    <p><strong>@Html.DisplayNameFor(model => model.Category.Name):</strong> @Html.DisplayFor(modelItem => item.Category.Name)</p>
+                    <p><strong>@Html.DisplayNameFor(model => model.Capacity):</strong> @Html.DisplayFor(modelItem => item.Capacity)</p>
+                </div>
+            </div>
+        <div class="card-footer" id="indexItem">
+            <span class="badge badge-pill badge-warning" id="edit">@Html.ActionLink("Edit", "Edit", new { id = item.PartyId })</span>
+            <span class="badge badge-pill badge-warning" id="details">@Html.ActionLink("Details", "Details", new { id = item.PartyId })</span>
+            <span class="badge badge-pill badge-warning" id="delete">@Html.ActionLink("Delete", "Delete", new { id = item.PartyId })</span>
+        </div>
+    </div>
+}
+</div>
 
 <script>
     $(document).ready(function () {
         $("#myInput").on("keyup", function () {
             var value = $(this).val().toLowerCase();
-            $("#myTable tr").filter(function () {
+            $("#searchHere .indexItem").filter(function () {
                 $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
             });
         });

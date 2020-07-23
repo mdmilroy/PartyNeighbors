@@ -301,6 +301,17 @@ textarea {
         display: flex;
         align-content: center;
         justify-content: center;
+        flex-direction: column;
+    }
+
+    .cardInfo p {
+        margin: 5px;
+        padding: 1px;
+    }
+
+    #partyCountdown {
+        border: thick black solid;
+        border-radius: 8px;
     }
 
 }
@@ -339,6 +350,18 @@ textarea {
         display: flex;
         align-content: center;
         justify-content: center;
+        flex-direction: column;
+    }
+
+        .cardInfo p {
+            display: flex;
+            margin: 5px;
+            padding: 1px;
+        }
+
+    #partyCountdown {
+        border: thick black solid;
+        border-radius: 8px;
     }
 }
 
