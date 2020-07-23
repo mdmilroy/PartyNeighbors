@@ -420,7 +420,6 @@
     <Content Include="Views\Parties\Details.cshtml" />
     <Content Include="Views\Neighborhoods\AddLocations.cshtml" />
     <Content Include="Views\Parties\Index.cshtml" />
-    <Content Include="Views\Parties\RSVP.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

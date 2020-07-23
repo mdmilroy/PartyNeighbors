@@ -40,13 +40,13 @@
                     <p><strong>@Html.DisplayNameFor(model => model.Capacity):</strong> @Html.DisplayFor(modelItem => item.Capacity)</p>
                 </div>
             </div>
-        <div class="card-footer" id="indexItem">
-            <span class="badge badge-pill badge-warning" id="edit">@Html.ActionLink("Edit", "Edit", new { id = item.PartyId })</span>
-            <span class="badge badge-pill badge-warning" id="details">@Html.ActionLink("Details", "Details", new { id = item.PartyId })</span>
-            <span class="badge badge-pill badge-warning" id="delete">@Html.ActionLink("Delete", "Delete", new { id = item.PartyId })</span>
+            <div class="card-footer" id="indexItem">
+                <span class="badge badge-pill badge-warning" id="edit">@Html.ActionLink("Edit", "Edit", new { id = item.PartyId })</span>
+                <span class="badge badge-pill badge-warning" id="details">@Html.ActionLink("Details", "Details", new { id = item.PartyId })</span>
+                <span class="badge badge-pill badge-warning" id="delete">@Html.ActionLink("Delete", "Delete", new { id = item.PartyId })</span>
+            </div>
         </div>
-    </div>
-}
+    }
 </div>
 
 <script>

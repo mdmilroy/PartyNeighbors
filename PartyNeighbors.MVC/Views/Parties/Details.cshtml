@@ -22,7 +22,8 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.PartyTime)
+            @{ string partytime = Model.PartyTime.ToString("MMM dd, yyyy hh:mm tt");}
+            @Html.DisplayFor(model => partytime)
         </dd>
 
         <dt>
