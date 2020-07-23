@@ -14,71 +14,10 @@
 @{ var signedIn = Request.IsAuthenticated; }
 
 
-<input class="form-control" id="myInput" type="text" placeholder="Search..">
+<input class="form-control col-lg-6" id="myInput" type="text" placeholder="Search..">
 <br>
 
-<table class="table table-hover" id="myTable">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.City)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.State.StateName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ZipCode)
-        </th>
-        <th></th>
-    </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.City)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.State.StateName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ZipCode)
-            </td>
-            <td class="userLinks">
-                @Html.ActionLink("Locations", "AddLocations", new { id = item.NeighborhoodId }) |
-                <span class="badge badge-pill badge-warning" id="edit">@Html.ActionLink("Edit", "Edit", new { id = item.NeighborhoodId })</span>
-                <span class="badge badge-pill badge-warning" id="details">@Html.ActionLink("Details", "Details", new { id = item.NeighborhoodId })</span>
-                <span class="badge badge-pill badge-warning" id="delete">@Html.ActionLink("Delete", "Delete", new { id = item.NeighborhoodId })</span>
-                @Html.ActionLink("Residents", "Index", "Residents", new { id = item.NeighborhoodId }) |
-            </td>
-        </tr>
-    }
-
-</table>
-
-<div class="container-fluid">
-    <table class="table table-hover" id="myTable">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.State.StateName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ZipCode)
-            </th>
-            <th></th>
-        </tr>
-    </table>
     <div class="container-fluid card-deck col-lg-10" id="indexCardDeck">
         @foreach (var item in Model)
         {
@@ -88,8 +27,8 @@
                     <h3 class="card-title">@Html.DisplayFor(modelItem => item.Name)</h3>
                     <div class="cardInfo">
                         <p>@Html.DisplayFor(modelItem => item.City), 
-                           @Html.DisplayFor(modelItem => item.State.StateName)</p>
-                        <p>@Html.DisplayFor(modelItem => item.ZipCode)</p>
+                           @Html.DisplayFor(modelItem => item.State.StateName)
+                           @Html.DisplayFor(modelItem => item.ZipCode)</p>
                     </div>
                 </div>
                 <div class="card-footer" id="indexItem">
@@ -100,7 +39,6 @@
             </div>
         }
     </div>
-</div>
 
 <script>
     $(document).ready(function () {

@@ -263,31 +263,65 @@ textarea {
     font-family: 'Rock Salt', cursive;
 }
 
-#indexCardDeck {
-    display: flex;
-    position: relative;
-    flex-direction: row;
-    align-content: center;
-    justify-content: center;
-    margin-bottom: 5rem;
+@media (min-width: 515px) {
+
+    #indexCardDeck {
+        display: flex;
+        position: relative;
+        flex-direction: row;
+        align-content: center;
+        justify-content: center;
+        margin: 5rem auto;
+    }
+
+    #indexItem {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        flex-direction: column;
+        margin: 1rem;
+    }
+
+    #indexItem .badge {
+        margin: .5rem;
+    }
+
+    .cardInfo {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+
 }
 
-#indexItem {
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    flex-direction: column;
-    margin: 1rem;
-}
+@media (max-width: 514px) {
 
-#indexItem .badge {
-    margin: .5rem;
-}
+    #indexCardDeck {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        margin: 5rem auto;
+    }
 
-.cardInfo {
-    display: flex;
-    align-content: center;
-    justify-content: center;
+    #indexItem {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        flex-direction: column;
+        margin: 1rem;
+    }
+
+        #indexItem .badge {
+            margin: .5rem;
+        }
+
+    .cardInfo {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
 }
 
 .contact {
