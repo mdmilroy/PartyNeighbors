@@ -39,6 +39,7 @@ namespace PartyNeighbors.Data
         public virtual ICollection<Party> Parties { get; set; }
 
         public int LocationId { get; set; }
+        [Display(Name= "Venue Name")]
         public string LocationName { get; set; }
         public virtual ICollection<Location> Locations { get; set; }
     }
