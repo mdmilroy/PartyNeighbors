@@ -28,6 +28,7 @@ Once the states are loaded in, you can begin creating Neighborhoods. After Neigh
 ### The Functionality
 Each entity has Create, Read, Update, and Delete (CRUD) functionality. All fields showing in the Create path are required fields. Within the Index view for each entity there is a search bar that will search all text within it's respective table.
 
-
 ## About Me
 I am a software developer and this is my final project at Eleven Fifty Academy. I have had a blast learning .Net and full stack development. I came in knowing some Python and SQL, and HTML 4 from the early 2000s. I have since grown my skills and expertise to include software development, full stack, and really enjoyed learning the back-end development. This project is something I actually think should be happening. I am not a super social person in my off time, however, I do think it is vital to an enjoyable life to get to know those closest to us. 
+
+![Home page](PNHomePageReadMe.png)
