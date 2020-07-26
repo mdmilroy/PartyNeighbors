@@ -76,7 +76,7 @@ namespace PartyNeighbors.Data
                 .WillCascadeOnDelete(false);
         }
 
-        public System.Data.Entity.DbSet<PartyNeighbors.Models.Party.PartyRSVP> PartyRSVPs { get; set; }
+        public DbSet<PartyNeighbors.Models.Party.PartyRSVP> PartyRSVPs { get; set; }
     }
 
     public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>

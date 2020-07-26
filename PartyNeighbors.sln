@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.29926.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartyNeighbors.MVC", "PartyNeighbors.MVC\PartyNeighbors.MVC.csproj", "{FB0D6D57-1E5F-4486-B9D2-C385374687E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartyNeighbors.MVC.Tests", "PartyNeighbors.MVC.Tests\PartyNeighbors.MVC.Tests.csproj", "{15B25F4B-2089-4E63-ABED-B91160B12FFA}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartyNeighbors.Data", "PartyNeighbors.Data\PartyNeighbors.Data.csproj", "{26201043-200B-4DC9-AC54-D827683DC1CE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartyNeighbors.Models", "PartyNeighbors.Models\PartyNeighbors.Models.csproj", "{63F5E034-3EF4-4641-B779-20492E16D74A}"
@@ -27,10 +25,6 @@ Global
 		{FB0D6D57-1E5F-4486-B9D2-C385374687E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB0D6D57-1E5F-4486-B9D2-C385374687E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB0D6D57-1E5F-4486-B9D2-C385374687E8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{15B25F4B-2089-4E63-ABED-B91160B12FFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{15B25F4B-2089-4E63-ABED-B91160B12FFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{15B25F4B-2089-4E63-ABED-B91160B12FFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{15B25F4B-2089-4E63-ABED-B91160B12FFA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{26201043-200B-4DC9-AC54-D827683DC1CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{26201043-200B-4DC9-AC54-D827683DC1CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26201043-200B-4DC9-AC54-D827683DC1CE}.Release|Any CPU.ActiveCfg = Release|Any CPU

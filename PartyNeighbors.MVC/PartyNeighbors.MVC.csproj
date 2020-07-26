@@ -19,7 +19,8 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44370</IISExpressSSLPort>
+    <IISExpressSSLPort>
+    </IISExpressSSLPort>
     <IISExpressAnonymousAuthentication>
     </IISExpressAnonymousAuthentication>
     <IISExpressWindowsAuthentication>
@@ -54,6 +55,12 @@
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Configuration.ConfigurationBuilders.Base, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Configuration.ConfigurationBuilders.Base.2.0.0\lib\Net471\Microsoft.Configuration.ConfigurationBuilders.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Configuration.ConfigurationBuilders.UserSecrets, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.2.0.0\lib\Net471\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Owin, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -226,8 +233,6 @@
     <Content Include="Assets\mi-pham-FtZL0r4DZYk-unsplash.jpg" />
     <Content Include="Assets\neonbrand-iPgQJEcGoE0-unsplash.jpg" />
     <Content Include="Assets\nikita-kachanovsky-bLY5JqP_Ldw-unsplash.jpg" />
-    <Content Include="Assets\PartyN.png" />
-    <Content Include="Assets\PartyN_1.svg" />
     <Content Include="Assets\Peace.jfif" />
     <Content Include="Assets\photo-1525489196064-0752fa4e16f2.jpg" />
     <Content Include="Assets\senjuti-kundu-JfolIjRnveY-unsplash.jpg" />
@@ -339,6 +344,7 @@
     <Content Include="Scripts\i18n\jquery-ui-timepicker-vi.js" />
     <Content Include="Scripts\i18n\jquery-ui-timepicker-zh-CN.js" />
     <Content Include="Scripts\i18n\jquery-ui-timepicker-zh-TW.js" />
+    <None Include="Properties\PublishProfiles\PartyNeighborsProject - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.5.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.5.1.js" />
     <Content Include="Scripts\jquery-3.5.1.min.js" />
