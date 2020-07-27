@@ -41,10 +41,6 @@ textarea {
     justify-content: center;
 }
 
-.btn-warning {
-    background-color: #DE6500;
-}
-
 .navbar-brand {
     font-family: 'Rock Salt', cursive;
     color: #DE6500 !important;
@@ -89,23 +85,27 @@ textarea {
         color: white;
     }
 
-.btn {
+.btn-default {
     background-color: #DE6500;
     color: white;
     font-family: 'Rock Salt', cursive;
+    border: none;
 }
-    .btn:hover {
+    .btn-default:hover, .btn-default:active:hover {
         background-color: #DE6500;
+        border: none;
         color: white;
     }
 
-.btn a {
-    color: white;
-}
-
-    .btn a:hover {
-        text-decoration: none;
+    .btn-default a {
+        color: white;
+        border: none;
     }
+
+        .btn-default a:hover {
+            text-decoration: none;
+            border: none;
+        }
 
 #edit {
     background-color: #DE6500;

@@ -6,7 +6,7 @@
 
 <h2>@ViewBag.Title</h2>
 
-@Html.ActionLink("Create New", "Create", null, new { style = "background-color: #DE6500; color:white;", @class = "btn btn-default btn-large" })
+@Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-default btn-large" })
 <br />
 <br />
 
@@ -23,7 +23,7 @@
         {
             var itemImg = $"{@Html.DisplayFor(modelItem => item.Name).ToString()}.jfif";
             <div class="card indexItem">
-                <img src="~/Assets/@itemImg" class="card-img-top" alt="...">
+                <img src="~/Assets/Photo Coming Soon.png" class="card-img-top" alt="...">
                 <div class="card-body">
                     @*<h1>@itemImg</h1>*@
                     <h3 class="card-title">@Html.DisplayFor(modelItem => item.Name)</h3>
@@ -34,7 +34,7 @@
                     </div>
                 </div>
                 <div class="card-footer" id="indexItem">
-                    @Html.ActionLink("Locations", "AddLocations", new { id = item.NeighborhoodId })
+                    <span class="badge badge-pill bg-info" id="locations">@Html.ActionLink("Locations", "AddLocations", new { id = item.NeighborhoodId })</span>
                     <span class="badge badge-pill badge-warning" id="edit">@Html.ActionLink("Edit", "Edit", new { id = item.NeighborhoodId })</span>
                     <span class="badge badge-pill badge-warning" id="details">@Html.ActionLink("Details", "Details", new { id = item.NeighborhoodId })</span>
                     <span class="badge badge-pill badge-warning" id="delete">@Html.ActionLink("Delete", "Delete", new { id = item.NeighborhoodId })</span>
