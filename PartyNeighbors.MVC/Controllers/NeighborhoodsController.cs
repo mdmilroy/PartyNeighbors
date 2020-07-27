@@ -157,31 +157,32 @@ namespace PartyNeighbors.MVC.Controllers
             return View("AddLocations");
         }
 
-        // GET: Neighborhoods/UnlistedNeighborhood
-        public ActionResult UnlistedPartial()
-        {
-            ViewBag.StateId = new SelectList(db.States, "StateId", "StateName");
-            return PartialView();
-        }
+        //// GET: Neighborhoods/UnlistedNeighborhood
+        //public ActionResult UnlistedNeighborhoodPartial()
+        //{
+        //    ViewBag.StateId = new SelectList(db.States, "StateId", "StateName");
+        //    return PartialView();
+        //}
 
-        // POST: Neighborhoods/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult UnlistedPartial(NeighborhoodCreate neighborhood)
-        {
-            if (ModelState.IsValid)
-            {
-                _userId = Guid.Parse(User.Identity.GetUserId());
-                _neighborhoodService = new NeighborhoodService(_userId);
-                _neighborhoodService.CreateNeighborhood(neighborhood);
-                return RedirectToAction("Create", "Residents");
-            }
+        //// POST: Neighborhoods/Create
+        //// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        //// more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult UnlistedNeighborhoodPartial(NeighborhoodCreate neighborhood)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        _userId = Guid.Parse(User.Identity.GetUserId());
+        //        _neighborhoodService = new NeighborhoodService(_userId);
+        //        _neighborhoodService.CreateNeighborhood(neighborhood);
+        //        return RedirectToAction("Index");
+        //    }
 
-            ViewBag.StateId = new SelectList(db.States, "StateId", "StateName", neighborhood.StateId);
-            return View(neighborhood);
-        }
+        //    ViewBag.StateId = new SelectList(db.States, "StateId", "StateName", neighborhood.StateId);
+        //    return View(neighborhood);
+        //}
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
